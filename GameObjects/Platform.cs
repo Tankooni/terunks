@@ -1,22 +1,21 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Croanc
- * Date: 11/23/2013
- * Time: 12:37 AM
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
+using Punk;
 
 namespace NHTI.GameObjects
 {
 	/// <summary>
 	/// Description of Platform.
 	/// </summary>
-	public class Platform
+	public class Platform : Entity
 	{
 		public Platform()
 		{
+		}
+		
+		public override void Load(System.Xml.XmlNode node)
+		{
+			base.Load(node);
+			
 		}
 	}
 }
