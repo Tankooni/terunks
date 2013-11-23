@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="GameObjects\Door.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
     <Compile Include="GameObjects\Platform.cs" />
     <Compile Include="GameObjects\wallColTile.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Hats\Hat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities" />
