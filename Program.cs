@@ -5,7 +5,7 @@ namespace NHTI
 {
 	class Program : Engine
 	{
-		public Program() : base(320, 240, 60) {}
+		public Program() : base(1000, 1000, 60) {}
 		
 		public override void Init()
 		{

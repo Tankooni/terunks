@@ -2970,7 +2970,7 @@
             <param name="complete">Optional completion callback.</param>
             <param name="type">Tween type.</param>
         </member>
-        <member name="M:Punk.Tweens.Misc.ColorTween.tween(System.Single,SFML.Graphics.Color,SFML.Graphics.Color,Punk.Tween.Easer)">
+        <member name="M:Punk.Tweens.Misc.ColorTween.Tween(System.Single,SFML.Graphics.Color,SFML.Graphics.Color,Punk.Tween.Easer)">
             <summary>
             Tweens the color to a new color.
             </summary>
