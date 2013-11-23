@@ -1,6 +1,7 @@
 ﻿
 using System;
 using Punk;
+using NHTI;
 
 namespace GameObjects
 {
@@ -17,7 +18,7 @@ namespace GameObjects
 		public override void Load(System.Xml.XmlNode node)
 		{
 			base.Load(node);
-			//SetHitbox(Width, Height);
+			//SetHitbox(Width * Utils.TILE_SIZE, Height * Utils.TILE_SIZE);
 		}
 	}
 }

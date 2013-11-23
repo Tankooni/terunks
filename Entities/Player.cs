@@ -16,6 +16,7 @@ using Punk.Graphics;
 using Punk.Utils;
 using SFML.Graphics;
 using SFML.Window;
+using GameObjects;
 
 namespace NHTI.Entities
 {
@@ -225,7 +226,15 @@ namespace NHTI.Entities
 		}
 		public void OnAnimationEndFace()
 		{
-			
+		}	
+		
+		public override void Added()
+		{
+			base.Added();
+			List<Entity> l = new List<Entity>();
+			World.GetType("PlayerSpawn",l);
+			X = l[0].X;
+			Y = l[0].Y;
 		}
 	}
 }
