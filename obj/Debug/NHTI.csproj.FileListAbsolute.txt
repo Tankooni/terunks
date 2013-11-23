@@ -10,3 +10,15 @@ C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\Punk.xml
 C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\NHTI.exe
 C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\NHTI.pdb
+C:\Working\C#\Terunks\obj\Debug\NHTI.exe
+C:\Working\C#\Terunks\obj\Debug\NHTI.pdb
+C:\Working\C#\Terunks\bin\Debug\NHTI.exe
+C:\Working\C#\Terunks\bin\Debug\NHTI.pdb
+C:\Working\C#\Terunks\bin\Debug\Fasterflect.dll
+C:\Working\C#\Terunks\bin\Debug\Punk.dll
+C:\Working\C#\Terunks\bin\Debug\sfmlnet-audio-2.dll
+C:\Working\C#\Terunks\bin\Debug\sfmlnet-graphics-2.dll
+C:\Working\C#\Terunks\bin\Debug\sfmlnet-window-2.dll
+C:\Working\C#\Terunks\bin\Debug\Punk.pdb
+C:\Working\C#\Terunks\bin\Debug\Punk.xml
+C:\Working\C#\Terunks\obj\Debug\NHTI.csprojResolveAssemblyReference.cache
