@@ -63,9 +63,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Logics\PhysicsBody.cs" />
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="GameWorld.cs" />
+    <Compile Include="Hats\Hat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities" />
+    <Folder Include="Entities\Logics" />
+    <Folder Include="Hats" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
