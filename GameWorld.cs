@@ -14,19 +14,13 @@ namespace NHTI
 	{
 		public GameWorld()
 		{
-			RegisterClass<wallColTile>("wallCollision");
-			RegisterClass<Platform>("platform");
-			RegisterClass<GfxTile>("wallGfx");
-			RegisterClass<Door>("door");
-			RegisterClass<PlayerSpawn>("playerSpawn");
 			
-			BuildWorld("assets/Levels/test.oel");
-			
-			this.Add(new Player(300, 300, 1));
 		}
 		
 		public override void Update()
 		{
+			if(Input.Down(Keyboard.Key.Escape))
+			   FP.Screen.Close();
 			
 //			if(Input.Down(Keyboard.Key.Escape))
 			base.Update();

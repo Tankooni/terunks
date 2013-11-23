@@ -15,6 +15,7 @@ using Punk;
 using Punk.Graphics;
 using Punk.Utils;
 using SFML.Window;
+using GameObjects;
 
 namespace NHTI.Entities
 {
@@ -109,7 +110,7 @@ namespace NHTI.Entities
 			//AddGraphic(image);
 			
 			//Add sprites
-			bodySprites = new Spritemap(Library.GetTexture("assets/Timunkslowres.png"), 64, 64, OnAnimationEnd);
+			bodySprites = new Spritemap(Library.GetTexture("assets/Timunkslowres.png"), 128, 128, OnAnimationEnd);
 			bodySprites.OriginX = 32;
 			bodySprites.OriginY = 64;
 			
@@ -121,7 +122,7 @@ namespace NHTI.Entities
 			
 			AddGraphic(bodySprites);
 			
-			this.SetHitbox(64, 64, 32, 64);
+			this.SetHitbox(64, 128, 32, 64);
 			//bodySprites.
 		}
 		
@@ -200,6 +201,8 @@ namespace NHTI.Entities
 			}
 			
 			bodySprites.Update();
+			World.Camera.X = X;
+			World.Camera.Y = Y;
 			//faceSprites.Update();
 		}
 		
@@ -213,6 +216,15 @@ namespace NHTI.Entities
 				bodySprites.Play("JumpIdle");
 			else if(bodySprites.CurrentAnim == "Fall")
 				bodySprites.Play("FallIdle");
+		}
+		
+		public override void Added()
+		{
+			base.Added();
+			List<Entity> l = new List<Entity>();
+			World.GetType("PlayerSpawn",l);
+			X = l[0].X;
+			Y = l[0].Y;
 		}
 	}
 }
