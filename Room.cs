@@ -18,15 +18,20 @@ namespace NHTI
 	{
 		public Entity[] currentEnts;
 		public List<Entity> Doors = new List<Entity>();
+		public Dictionary<Entity, Entity[]> Rooms = new Dictionary<Entity, Entity[]>();
 		Thread roomLoader;
+		Player player;
+		bool isFirst = true;
 		public Room()
 		{
 			foreach (string file in Directory.EnumerateFiles("assets/Levels/", "*.oel"))
 			{
+				FP.Log("PreloadingXML");
              	Library.GetXml(file);
 			}
 			
 			roomLoader = new Thread(LoadRooms);
+			roomLoader.IsBackground = true;
 			RegisterClass<wallColTile>("wallCollision");
 			RegisterClass<Platform>("platform");
 			RegisterClass<GfxTile>("wallGfx");
@@ -35,37 +40,51 @@ namespace NHTI
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/test.oel"));
 			//world.BuildWorld("assets/Levels/test.oel");
-			GetType("Door", Doors);
+			this.Add(player = new Player(300, 300, 1));
 			
 			
-			this.Add(new Player(300, 300, 1));
 		}
 		
 		public override void Update()
 		{
+			if(isFirst)
+			{
+				GetType("Door", Doors);
+				roomLoader.Start();
+				isFirst = false;
+			}
 			if(Input.Down(Keyboard.Key.Escape))
 			   FP.Screen.Close();
 			
 //			if(Input.Down(Keyboard.Key.Escape))
 			base.Update();
-			if(Input.Down(Keyboard.Key.Left))
-				Camera.X -= 10;
-			else if(Input.Down(Keyboard.Key.Right))
-				Camera.X += 10;
-			if(Input.Down(Keyboard.Key.Up))
-				Camera.Y -= 10;
-			else if(Input.Down(Keyboard.Key.Down))
-				Camera.Y += 10;
 			if(Input.Down(Keyboard.Key.PageDown))
 				Camera.Zoom -= 1*FP.Elapsed;
 			else if(Input.Down(Keyboard.Key.PageUp))
 				Camera.Zoom += 1*FP.Elapsed;
+			
+			//FP.Log(roomLoader.IsAlive);
+			
+			if(Input.Pressed(Keyboard.Key.H)  && !roomLoader.IsAlive)
+			{
+				RemoveAll();
+				currentEnts = Rooms[Doors[1]];
+				AddList(currentEnts);
+				Add(player);
+			}
+			
 			FP.Engine.ClearColor = FP.Color(0x123410);
 		}
 		
 		public void LoadRooms()
 		{
-			
+			FP.Log("LoadRoom Start: " + Doors.Count);
+			foreach(Entity d in Doors)
+			{
+				Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
+				FP.Log(d);
+			}
+			FP.Log("LoadRoom End");
 		}
 	}
 }
