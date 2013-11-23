@@ -1,11 +1,9 @@
 <level width="640" height="480">
   <collision>
-    <collisionBox id="1" x="0" y="464" width="16" height="16" />
-    <collisionBox id="2" x="0" y="16" width="16" height="16" />
-    <collisionBox id="3" x="624" y="16" width="16" height="448" />
-    <collisionBox id="4" x="0" y="16" width="16" height="448" />
-    <collisionBox id="5" x="0" y="464" width="640" height="16" />
-    <collisionBox id="0" x="0" y="0" width="640" height="16" />
+    <wallCollision id="3" x="624" y="16" width="16" height="448" />
+    <wallCollision id="4" x="0" y="16" width="16" height="448" />
+    <wallCollision id="5" x="0" y="464" width="640" height="16" />
+    <wallCollision id="0" x="0" y="0" width="640" height="16" />
   </collision>
   <midGfx>
     <wallGfx id="0" x="0" y="0" width="16" height="16" />

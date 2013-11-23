@@ -1,5 +1,8 @@
 ﻿using System;
 using Punk;
+using GameObjects;
+using Punk.Utils;
+using SFML.Window;
 
 namespace NHTI
 {
@@ -10,13 +13,27 @@ namespace NHTI
 	{
 		public GameWorld()
 		{
+			RegisterClass<wallColTile>("wallCollision");
+			RegisterClass<Platform>("platform");
+			RegisterClass<GfxTile>("wallGfx");
+			
+			BuildWorld("assets/Levels/test.oel");
 		}
 		
 		public override void Update()
 		{
+			
+//			if(Input.Down(Keyboard.Key.Escape))
 			base.Update();
-			//BuildWorld("B");
-			FP.Engine.ClearColor = FP.Color(FP.Rand(uint.MaxValue));
+			if(Input.Down(Keyboard.Key.Left))
+				Camera.X -= 10;
+			else if(Input.Down(Keyboard.Key.Right))
+				Camera.X += 10;
+			if(Input.Down(Keyboard.Key.Up))
+				Camera.Y -= 10;
+			else if(Input.Down(Keyboard.Key.Down))
+				Camera.Y += 10;
+			FP.Engine.ClearColor = FP.Color(0x123410);
 		}
 	}
 }
