@@ -68,6 +68,7 @@
     <Compile Include="GameObjects\Door.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
     <Compile Include="GameObjects\Platform.cs" />
+    <Compile Include="GameObjects\PlayerSpawn.cs" />
     <Compile Include="GameObjects\wallColTile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Hats\Hat.cs" />

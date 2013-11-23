@@ -15,8 +15,10 @@ namespace NHTI
 		public GameWorld()
 		{
 			RegisterClass<wallColTile>("wallCollision");
-			//RegisterClass<Platform>("platform");
-			//RegisterClass<GfxTile>("wallGfx");
+			RegisterClass<Platform>("platform");
+			RegisterClass<GfxTile>("wallGfx");
+			RegisterClass<Door>("door");
+			RegisterClass<PlayerSpawn>("playerSpawn");
 			
 			BuildWorld("assets/Levels/test.oel");
 			

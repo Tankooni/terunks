@@ -29,7 +29,7 @@ namespace GameObjects
 		
 		public override void Load(System.Xml.XmlNode node)
 		{
-			
+			base.Load(node);
 		}
 	}
 }

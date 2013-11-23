@@ -18,9 +18,7 @@ namespace GameObjects
 		public override void Load(System.Xml.XmlNode node)
 		{
 			base.Load(node);
-			X *= Utils.TILE_SIZE;
-			Y *= Utils.TILE_SIZE;
-			SetHitbox(Width * Utils.TILE_SIZE, Height * Utils.TILE_SIZE);
+			//SetHitbox(Width * Utils.TILE_SIZE, Height * Utils.TILE_SIZE);
 		}
 	}
 }
