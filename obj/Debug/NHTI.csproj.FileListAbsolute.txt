@@ -22,3 +22,15 @@ C:\Working\C#\Terunks\bin\Debug\sfmlnet-window-2.dll
 C:\Working\C#\Terunks\bin\Debug\Punk.pdb
 C:\Working\C#\Terunks\bin\Debug\Punk.xml
 C:\Working\C#\Terunks\obj\Debug\NHTI.csprojResolveAssemblyReference.cache
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\NHTI.exe
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\NHTI.pdb
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\Fasterflect.dll
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\Punk.dll
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\Punk.pdb
+C:\Users\Matte\Documents\Game Creation\Terunks source\bin\Debug\Punk.xml
+C:\Users\Matte\Documents\Game Creation\Terunks source\obj\Debug\NHTI.csprojResolveAssemblyReference.cache
+C:\Users\Matte\Documents\Game Creation\Terunks source\obj\Debug\NHTI.exe
+C:\Users\Matte\Documents\Game Creation\Terunks source\obj\Debug\NHTI.pdb
