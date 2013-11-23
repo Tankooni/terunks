@@ -27,7 +27,7 @@ namespace NHTI.Entities
 		public uint id;
 		public Controller controller;
 		
-		
+		public CameraFollow cameraFollow;
 		//Animation shtuffs
 		private Spritemap bodySprites;
 		private Spritemap faceSprites;
@@ -97,6 +97,9 @@ namespace NHTI.Entities
 		{
 			this.id = id;
 			this.controller = new Controller(id);
+			
+			cameraFollow = new CameraFollow();
+			AddLogic(cameraFollow);
 			
 			physics = new PhysicsBody();
 			physics.Colliders.Add("platform");
@@ -201,8 +204,6 @@ namespace NHTI.Entities
 			}
 			
 			bodySprites.Update();
-			World.Camera.X = X;
-			World.Camera.Y = Y;
 			//faceSprites.Update();
 		}
 		
@@ -226,5 +227,6 @@ namespace NHTI.Entities
 			X = l[0].X;
 			Y = l[0].Y;
 		}
+		
 	}
 }

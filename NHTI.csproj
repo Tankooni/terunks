@@ -74,12 +74,14 @@
     <Compile Include="Hats\Hat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Utilities\CameraFollow.cs" />
+    <Compile Include="Utilities\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities" />
     <Folder Include="Entities\Logics" />
     <Compile Include="Room.cs" />
+    <Folder Include="Utilities" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameObjects" />
