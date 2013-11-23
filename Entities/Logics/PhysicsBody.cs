@@ -55,7 +55,7 @@ public class PhysicsBody : Logic
 		public Vector2f maxVelocity;
 		
 		private bool canMoveX;
-		private bool canMoveY
+		private bool canMoveY;
 		
 		private float frictionFactor = 1f;
 		private const float airFriction = 0.9f;
@@ -63,12 +63,11 @@ public class PhysicsBody : Logic
 		public PhysicsBody()
 		{
 			Colliders = new List<string>();
-			MoveDelta = new Vector2f();
+			acceleration = new Vector2f();
 			Gravity = 0.75f;
 			
-			movement = new Vector2f();
-			hasGravity = true;
-			canMove = true;
+			velocity = new Vector2f();
+			canMoveX = canMoveY = true;
 			
 			AddResponse(CHANGE_VEL, OnChangeVelocity);
 			AddResponse(CHANGE_ACC, OnChangeAcceleration);

@@ -121,6 +121,7 @@ namespace NHTI.Entities
 			PhysicsBody physics = new PhysicsBody();
 			//physics.Colliders.Add("platforms?");
 			physics.maxVelocity = new Vector2f(5, 5);
+			AddLogic(physics);
 		}
 		
 		public override void Update()
