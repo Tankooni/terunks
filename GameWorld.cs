@@ -15,8 +15,8 @@ namespace NHTI
 		public GameWorld()
 		{
 			RegisterClass<wallColTile>("wallCollision");
-			RegisterClass<Platform>("platform");
-			RegisterClass<GfxTile>("wallGfx");
+			//RegisterClass<Platform>("platform");
+			//RegisterClass<GfxTile>("wallGfx");
 			
 			BuildWorld("assets/Levels/test.oel");
 			
@@ -36,6 +36,10 @@ namespace NHTI
 				Camera.Y -= 10;
 			else if(Input.Down(Keyboard.Key.Down))
 				Camera.Y += 10;
+			if(Input.Down(Keyboard.Key.PageDown))
+				Camera.Zoom -= 1*FP.Elapsed;
+			else if(Input.Down(Keyboard.Key.PageUp))
+				Camera.Zoom += 1*FP.Elapsed;
 			FP.Engine.ClearColor = FP.Color(0x123410);
 		}
 	}
