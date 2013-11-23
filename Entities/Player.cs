@@ -129,7 +129,7 @@ namespace NHTI.Entities
 			
 			this.SetOrigin(32, 128);
 			this.SetHitbox(67, 128, 32, 128);
-			spritemap.
+			//spritemap.
 		}
 		
 		public override void Update()
@@ -151,8 +151,8 @@ namespace NHTI.Entities
 			base.Update();
 			
 			//Animation stuff
-			bodySprites.Update();
-			faceSprites.Update();
+			//bodySprites.Update();
+//			faceSprites.Update();
 		}
 	}
 }
