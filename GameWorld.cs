@@ -15,7 +15,7 @@ namespace NHTI
 		public override void Update()
 		{
 			base.Update();
-			
+			//BuildWorld("B");
 			FP.Engine.ClearColor = FP.Color(FP.Rand(uint.MaxValue));
 		}
 	}

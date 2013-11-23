@@ -12,7 +12,6 @@ namespace NHTI
 			base.Init();
 			
 			FP.Console.Enable();
-			FP.Screen.SetTitle("A proper title!");
 			FP.Screen.SetTitle("Bananas");
 			FP.World = new GameWorld();
 		}
