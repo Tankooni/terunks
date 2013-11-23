@@ -237,7 +237,7 @@
   <entities>
     <door id="228" x="7040" y="5504" width="128" height="64" RoomLink="test2" DoorNum="1" DoorLink="0" DoorFace="Down" />
     <door id="226" x="9152" y="7808" width="64" height="128" RoomLink="test2" DoorNum="0" DoorLink="0" DoorFace="Left" />
-    <playerspawn id="226" x="7168" y="7808" />
+    <playerSpawn id="226" x="7168" y="7808" />
     <platform id="0" x="6816" y="7744" width="128" height="64" />
     <platform id="1" x="6432" y="7552" width="128" height="64" />
     <platform id="2" x="6080" y="7392" width="128" height="64" />

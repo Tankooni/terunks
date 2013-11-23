@@ -13,7 +13,7 @@ namespace NHTI
 			
 			FP.Console.Enable();
 			FP.Screen.SetTitle("Bananas");
-			FP.World = new GameWorld();
+			FP.World = new Room();
 		}
 		
 		public static void Main(string[] args)
