@@ -16,7 +16,7 @@ namespace NHTI.Hats
 	/// </summary>
 	public abstract class Hat
 	{
-		public abstract Player.FaceAnimations attackStart();
-		public abstract Player.FaceAnimations attackEnd();
+		public abstract string attackStart();
+		public abstract string attackEnd();
 	}
 }

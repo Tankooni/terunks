@@ -56,6 +56,7 @@ public class PhysicsBody : Logic
 		
 		private bool canMoveX = true;
 		private bool canMoveY = true;
+		public bool isGrounded = true;
 		
 		private float frictionFactor = .90f;
 		private const float airFriction = 0.9f;
@@ -104,7 +105,12 @@ public class PhysicsBody : Logic
 			if(x == Parent.X)
 				velocity.X = 0;
 			if(y == Parent.Y)
+			{
 				velocity.Y = 0;
+				isGrounded = true;
+			}
+			else
+				isGrounded = false;
 		}
 		
 		private void OnChangeVelocity(params object[] args)
