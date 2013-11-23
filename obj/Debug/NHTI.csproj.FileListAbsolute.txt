@@ -1,0 +1,12 @@
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\NHTI.exe
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\NHTI.pdb
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\Fasterflect.dll
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\Punk.dll
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\Punk.pdb
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\bin\Debug\Punk.xml
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\NHTI.exe
+C:\Users\Jake\Documents\SharpDevelop Projects\NHTI\NHTI\obj\Debug\NHTI.pdb
