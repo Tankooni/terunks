@@ -52,12 +52,12 @@ public class PhysicsBody : Logic
 		public Vector2f acceleration;
 		public Vector2f velocity;
 		
-		public Vector2f maxVelocity;
+		public float maxXVelocity;
 		
-		private bool canMoveX;
-		private bool canMoveY;
+		private bool canMoveX = true;
+		private bool canMoveY = true;
 		
-		private float frictionFactor = 1f;
+		private float frictionFactor = .90f;
 		private const float airFriction = 0.9f;
 		
 		public PhysicsBody()
@@ -89,9 +89,22 @@ public class PhysicsBody : Logic
 			if(!canMoveY)
 				velocity.Y = 0;
 			
+			if(velocity.X > maxXVelocity)
+				velocity.X = maxXVelocity;
+			else if(velocity.X < -maxXVelocity)
+				velocity.X = -maxXVelocity;
+			
 			//Insert friction stuff here
-
-			Parent.MoveBy(velocity.X, velocity.Y, Colliders, true);
+			velocity.X *= frictionFactor;
+			
+			//Actual Movement
+			float x = Parent.X, y = Parent.Y;
+			Parent.MoveBy(velocity.X, -velocity.Y, Colliders, true);
+			
+			if(x == Parent.X)
+				velocity.X = 0;
+			if(y == Parent.Y)
+				velocity.Y = 0;
 		}
 		
 		private void OnChangeVelocity(params object[] args)
