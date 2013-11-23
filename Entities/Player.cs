@@ -27,7 +27,9 @@ namespace NHTI.Entities
 		
 		
 		//Animation shtuffs
-		public Spritemap spritemap;
+		public Spritemap bodySprites;
+		public Spritemap faceSprites;
+		
 		public enum BodyAnimations
 		{
 			//Put animations here
@@ -96,14 +98,9 @@ namespace NHTI.Entities
 			{ FaceAnimations.Release, new AnimationData (10, FP.Frames(), new Vector2i(0,0))}
 		};
 		
-		class AnimationHandler : Logic
-		{
-			
-		}
 		
 		
-		public Vector2f vel, acc;
-		
+		//Stats
 		public int health;
 		
 		public Hat hat;
@@ -111,24 +108,51 @@ namespace NHTI.Entities
 		public float jumpForce = 3.0f;
 		public float jumpDuration = .3f;
 		
-		public bool isGrounded;
+		//Other stuff
+		PhysicsBody physics;
 		
 		public Player(float x, float y, uint id) : base(x,y)
 		{
 			this.id = id;
 			this.controller = new Controller(id);
 			
-			PhysicsBody physics = new PhysicsBody();
-			//physics.Colliders.Add("platforms?");
-			physics.maxVelocity = new Vector2f(5, 5);
+			physics = new PhysicsBody();
+			physics.Colliders.Add("platform");
+			physics.Colliders.Add("wall");
+			physics.maxXVelocity = 5f;
 			AddLogic(physics);
+			
+			//placeholder sorta type of image
+			Image image = new Image(Library.GetTexture("assets/Terunks.png"));
+			image.OriginX = 32; image.OriginY = 126;
+			AddGraphic(image);
+			
+			this.SetOrigin(32, 128);
+			this.SetHitbox(67, 128, 32, 128);
+			//spritemap.
 		}
 		
 		public override void Update()
-		{
+		{			
+			//Movement
+			if(Input.Pressed(Keyboard.Key.Space) && physics.velocity.Y == 0)
+				OnMessage(PhysicsBody.CHANGE_VEL, 0, 20);
+			
+			if(Input.Check(Keyboard.Key.A))
+				OnMessage(PhysicsBody.CHANGE_VEL, -1f);
+			if(Input.Check(Keyboard.Key.S))
+				OnMessage(PhysicsBody.CHANGE_VEL, 0, -1f);
+			if(Input.Check(Keyboard.Key.D))
+				OnMessage(PhysicsBody.CHANGE_VEL, 1f);
+			if(Input.Check(Keyboard.Key.W))
+				OnMessage(PhysicsBody.CHANGE_VEL, 0, 1f);
+			
+			
 			base.Update();
 			
 			//Animation stuff
+			//bodySprites.Update();
+//			faceSprites.Update();
 		}
 	}
 }
