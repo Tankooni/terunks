@@ -5,32 +5,32 @@
   <BackgroundColor A="255" R="125" G="160" B="255" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
-    <Width>640</Width>
-    <Height>480</Height>
+    <Width>12800</Width>
+    <Height>12800</Height>
   </LevelDefaultSize>
   <LevelMinimumSize>
     <Width>640</Width>
     <Height>480</Height>
   </LevelMinimumSize>
   <LevelMaximumSize>
-    <Width>640</Width>
-    <Height>480</Height>
+    <Width>12800</Width>
+    <Height>12800</Height>
   </LevelMaximumSize>
   <Filename>D:\terunks\assets\TerunksProject.oep</Filename>
   <AngleMode>Radians</AngleMode>
-  <CameraEnabled>false</CameraEnabled>
+  <CameraEnabled>true</CameraEnabled>
   <CameraSize>
-    <Width>640</Width>
-    <Height>480</Height>
+    <Width>1280</Width>
+    <Height>720</Height>
   </CameraSize>
-  <ExportCameraPosition>false</ExportCameraPosition>
+  <ExportCameraPosition>true</ExportCameraPosition>
   <LevelValueDefinitions />
   <LayerDefinitions>
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>collision</Name>
       <Grid>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Grid>
       <ScrollFactor>
         <X>1</X>
@@ -40,8 +40,8 @@
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>midGfx</Name>
       <Grid>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Grid>
       <ScrollFactor>
         <X>1</X>
@@ -51,8 +51,8 @@
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>entities</Name>
       <Grid>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>32</Width>
+        <Height>32</Height>
       </Grid>
       <ScrollFactor>
         <X>1</X>
@@ -64,8 +64,8 @@
   <EntityDefinitions>
     <EntityDefinition Name="wallGfx" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Size>
       <Origin>
         <X>0</X>
@@ -77,25 +77,10 @@
       <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
-    <EntityDefinition Name="smallPlatform" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
-      <Size>
-        <Width>16</Width>
-        <Height>8</Height>
-      </Size>
-      <Origin>
-        <X>0</X>
-        <Y>0</Y>
-      </Origin>
-      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
-        <RectColor A="255" R="255" G="0" B="0" />
-      </ImageDefinition>
-      <ValueDefinitions />
-      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
-    </EntityDefinition>
     <EntityDefinition Name="wallCollision" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Size>
       <Origin>
         <X>0</X>
@@ -109,8 +94,8 @@
     </EntityDefinition>
     <EntityDefinition Name="platform" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>32</Width>
-        <Height>16</Height>
+        <Width>128</Width>
+        <Height>64</Height>
       </Size>
       <Origin>
         <X>0</X>
@@ -124,8 +109,8 @@
     </EntityDefinition>
     <EntityDefinition Name="playerspawn" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>32</Width>
-        <Height>64</Height>
+        <Width>64</Width>
+        <Height>128</Height>
       </Size>
       <Origin>
         <X>0</X>
@@ -139,8 +124,8 @@
     </EntityDefinition>
     <EntityDefinition Name="door" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Size>
       <Origin>
         <X>0</X>
