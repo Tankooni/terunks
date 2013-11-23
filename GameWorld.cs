@@ -1,4 +1,5 @@
 ﻿using System;
+using NHTI.Entities;
 using Punk;
 using GameObjects;
 using Punk.Utils;
@@ -18,6 +19,8 @@ namespace NHTI
 			RegisterClass<GfxTile>("wallGfx");
 			
 			BuildWorld("assets/Levels/test.oel");
+			
+			this.Add(new Player(300, 300, 1));
 		}
 		
 		public override void Update()

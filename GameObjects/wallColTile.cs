@@ -11,7 +11,7 @@ namespace GameObjects
 	{
 		public wallColTile()
 		{
-			Type = "Wall";
+			Type = "wall";
 		}
 		
 		public override void Load(System.Xml.XmlNode node)
