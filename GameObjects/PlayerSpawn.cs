@@ -10,6 +10,7 @@ namespace GameObjects
 	{
 		public PlayerSpawn()
 		{
+			Type = "PlayerSpawn";
 		}
 		
 		public override void Load(System.Xml.XmlNode node)
@@ -20,8 +21,6 @@ namespace GameObjects
 		public override void Added()
 		{
 			base.Added();
-			World.Camera.X = X + HalfHeight;
-			World.Camera.Y = Y + HalfWidth;
 		}
 	}
 }

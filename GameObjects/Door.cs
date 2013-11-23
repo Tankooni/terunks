@@ -25,6 +25,13 @@ namespace GameObjects
 		
 		public Door()
 		{
+			Type = "Door";
+		}
+		
+		public override void Update()
+		{
+			base.Update();
+			
 		}
 		
 		public override void Load(System.Xml.XmlNode node)
