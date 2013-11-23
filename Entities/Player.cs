@@ -14,6 +14,7 @@ using NHTI.Hats;
 using Punk;
 using Punk.Graphics;
 using Punk.Utils;
+using SFML.Graphics;
 using SFML.Window;
 
 namespace NHTI.Entities
@@ -26,60 +27,59 @@ namespace NHTI.Entities
 		public uint id;
 		public Controller controller;
 		
-		
 		//Animation shtuffs
 		private Spritemap bodySprites;
 		private Spritemap faceSprites;
 		
 		public struct AnimationData
 		{
-			public AnimationData(int fps, int[] frames, bool loop, Vector2i origin)
+			public AnimationData(int fps, int[] frames, bool loop, int[] yFacePoints)
 			{
 				this.fps = fps;
 				this.frames = frames;
 				this.loop = loop;
-				this.origin = origin;
+				this.yFacePoints = yFacePoints;
 			}
 			public int fps;
 			public int[] frames;
 			public bool loop;
-			public Vector2i origin;
+			
+			public int[] yFacePoints;
 		}
 		
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
-			{ "Idle", new AnimationData (10, FP.Frames(1), true, new Vector2i(0,0))},
-			{ "Run", new AnimationData (10, FP.MakeFrames(24,43,1), true, new Vector2i(0,0))},
-			{ "Duck", new AnimationData (10, FP.MakeFrames(44,47,1), false, new Vector2i(0,0))},
-			{ "DuckIdle", new AnimationData (10, FP.MakeFrames(48,53,1), true, new Vector2i(0,0))},
-			{ "DuckStand", new AnimationData (10, FP.MakeFrames(44,47,1).Reverse().ToArray(), true, new Vector2i(0,0))},
-			{ "DuckShuffle", new AnimationData (10, FP.MakeFrames(54,63,1), true, new Vector2i(0,0))},
-			{ "Jump", new AnimationData (10, FP.MakeFrames(64,69,1), false, new Vector2i(0,0))},
-			{ "JumpIdle", new AnimationData (10, FP.Frames(68,69), true, new Vector2i(0,0))},
-			{ "Fall", new AnimationData (10, FP.MakeFrames(70,75,1), false, new Vector2i(0,0))},
-			{ "FallIdle", new AnimationData (10, FP.Frames(74,75), true, new Vector2i(0,0))},
-			{ "Dash", new AnimationData (10, FP.Frames(76,77), true, new Vector2i(0,0))},
-			{ "Stagger1", new AnimationData (10, FP.MakeFrames(78,82,1), false, new Vector2i(0,0))},
-			{ "Stagger2", new AnimationData (10, FP.MakeFrames(83,87,1), false, new Vector2i(0,0))},
-			{ "Death", new AnimationData (10, FP.MakeFrames(88,119), false, new Vector2i(0,0))},
-			{ "Dance", new AnimationData (10, FP.MakeFrames(120, 134), false, new Vector2i(0,0))}
+			{ "Idle", new AnimationData (10, FP.Frames(0), true, new int[]{160})},
+			{ "Run", new AnimationData (10, FP.MakeFrames(1,20,1), true, 
+			                            new int[]{150,150,160,160,170,170,180,180,165,165,150,150,160,160,170,170,180,170,165,165})},
+			{ "Duck", new AnimationData (10, FP.MakeFrames(21,24,1), false, new int[]{150,200,240,260})},
+			{ "DuckIdle", new AnimationData (10, FP.Frames(25), true, new int[]{260})},
+			{ "DuckStand", new AnimationData (10, FP.MakeFrames(21,24,1).Reverse().ToArray(), true, new int[]{260,240,200,150})},
+			{ "DuckShuffle", new AnimationData (10, FP.MakeFrames(26,35,1), true, new int[]{260,260,260,260,260,260,260,260,260,260})},
+			{ "Jump", new AnimationData (10, FP.MakeFrames(36,41,1), false, new int[]{150,150,75,75,65,65})},
+			{ "JumpIdle", new AnimationData (10, FP.Frames(40,41), true, new int[]{65,65})},
+			{ "Fall", new AnimationData (10, FP.MakeFrames(42,47,1), false, new int[]{65,65,115,115,150,150})},
+			{ "FallIdle", new AnimationData (10, FP.Frames(46,47), true, new int[]{150,150})},
+			{ "Dash", new AnimationData (10, FP.Frames(48,49), true, null)},
+			{ "Stagger1", new AnimationData (10, FP.MakeFrames(50,54,1), false, null)},
+			{ "Stagger2", new AnimationData (10, FP.MakeFrames(55,59,1), false, null)},
+			{ "Death", new AnimationData (10, FP.MakeFrames(60,91,1), false, null)},
+			{ "Dance", new AnimationData (10, FP.MakeFrames(92, 106,1), false, null)}
 		};
 		
 		public static Dictionary<string, AnimationData> FaceAnimDict = new Dictionary<string, AnimationData>()
 		{
-			{ "None", new AnimationData (10, FP.Frames(), false, new Vector2i(0,0))},
-			{ "Idle", new AnimationData (10, FP.Frames(), true, new Vector2i(0,0))},
-			{ "RunIdle", new AnimationData (10, FP.Frames(), true, new Vector2i(0,0))},
-			{ "Jump", new AnimationData (10, FP.Frames(), true, new Vector2i(0,0))},
-			{ "Fall", new AnimationData (10, FP.Frames(), true, new Vector2i(0,0))},
-			{ "ChargeAttack", new AnimationData (10, FP.Frames(), false, new Vector2i(0,0))},
-			{ "ChargeAttackLoop", new AnimationData (10, FP.Frames(), true, new Vector2i(0,0))},
-			{ "Release", new AnimationData (10, FP.Frames(), false, new Vector2i(0,0))}
+			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
+			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
+			{ "RunIdle", new AnimationData (10, FP.MakeFrames(2,21,1), true, null)},
+			{ "Jump", new AnimationData (10, FP.MakeFrames(22, 27, 1), false, null)},
+			{ "JumpIdle", new AnimationData (10, FP.MakeFrames(26, 27, 1), true, null)},
+			{ "Fall", new AnimationData (10, FP.MakeFrames(28, 33, 1), false, null)},
+			{ "FallIdle", new AnimationData (10, FP.MakeFrames(32, 33, 1), true, null)},
+			{ "ChargeAttack", new AnimationData (10, FP.MakeFrames(34, 42, 1), false, null)},
+			{ "ChargeAttackLoop", new AnimationData (10, FP.MakeFrames(42,45, 1), true, null)},
+			{ "Release", new AnimationData (10, FP.MakeFrames(46, 57, 1), false, null)}
 		};
-		
-		static Player(){
-
-		}
 		
 		//Stats
 		public int health;
@@ -103,26 +103,30 @@ namespace NHTI.Entities
 			physics.maxXVelocity = 5f;
 			AddLogic(physics);
 			
-			//placeholder sorta type of image
-			//Image image = new Image(Library.GetTexture("assets/Terunks.png"));
-			//image.OriginX = 32; image.OriginY = 126;
-			//AddGraphic(image);
-			
 			//Add sprites
-			bodySprites = new Spritemap(Library.GetTexture("assets/Timunkslowres.png"), 64, 64, OnAnimationEnd);
-			bodySprites.OriginX = 32;
-			bodySprites.OriginY = 64;
+			bodySprites = new Spritemap(Library.GetTexture("assets/Timunkslowres.png"), 88, 100, OnAnimationEndBody);
+			bodySprites.OriginX = 44;
+			bodySprites.OriginY = 100;
+			
+			faceSprites = new Spritemap(Library.GetTexture("assets/TimunksFacelowres.png"), 42, 34, OnAnimationEndFace);
+			faceSprites.CenterOrigin();
+			faceSprites.OriginX = 21;
+			
+			//bodySprites.
 			
 			//add all the things
 			foreach(KeyValuePair<string, AnimationData> entry in BodyAnimDict)
 				bodySprites.Add(entry.Key, entry.Value.frames, entry.Value.fps, entry.Value.loop);
+			foreach(KeyValuePair<string, AnimationData> entry in FaceAnimDict)
+				faceSprites.Add(entry.Key, entry.Value.frames, entry.Value.fps, entry.Value.loop);
 			
-			bodySprites.Play("Run");
+			bodySprites.Play("Idle");
+			faceSprites.Play("Idle");
 			
 			AddGraphic(bodySprites);
+			AddGraphic(faceSprites);
 			
-			this.SetHitbox(64, 64, 32, 64);
-			//bodySprites.
+			this.SetHitbox(88, 100, 44, 100);
 		}
 		
 		public override void Update()
@@ -165,19 +169,11 @@ namespace NHTI.Entities
 				if(isDucking)
 				{
 					//Idle
-					if(physics.velocity.X == 0)
+					if(physics.velocity.X == 0 && bodySprites.CurrentAnim != "DuckIdle")
 						bodySprites.Play("Duck", false);
 					//Run
-					else if(physics.velocity.X > 0)
-					{
+					else
 						bodySprites.Play("DuckShuffle");
-						bodySprites.FlippedX = false;
-					}
-					else if (physics.velocity.X < 0)
-					{
-						bodySprites.Play("DuckShuffle");
-						bodySprites.FlippedX = true;
-					}
 				}
 				else
 				{
@@ -200,11 +196,24 @@ namespace NHTI.Entities
 			}
 			
 			bodySprites.Update();
-			//faceSprites.Update();
+			
+			//get y offset of the face
+			if(bodySprites.CurrentAnim != "")
+			{
+				AnimationData animData = BodyAnimDict[bodySprites.CurrentAnim];
+				int[] yoffset = animData.yFacePoints;
+				if(yoffset != null)
+				{
+					faceSprites.OriginY = bodySprites.Height - yoffset[bodySprites.Frame - animData.frames[0]]/4
+											+ faceSprites.Height - 10;
+				}
+			}
+			
+			faceSprites.Update();
 		}
 		
-		public void OnAnimationEnd()
-		{
+		public void OnAnimationEndBody()
+		{		
 			if(bodySprites.CurrentAnim == "Duck")
 				bodySprites.Play("DuckIdle");
 			else if(bodySprites.CurrentAnim == "Stand")
@@ -213,6 +222,10 @@ namespace NHTI.Entities
 				bodySprites.Play("JumpIdle");
 			else if(bodySprites.CurrentAnim == "Fall")
 				bodySprites.Play("FallIdle");
+		}
+		public void OnAnimationEndFace()
+		{
+			
 		}
 	}
 }
