@@ -63,13 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chunk.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
     <Compile Include="GameObjects\Platform.cs" />
     <Compile Include="GameObjects\wallColTile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameObjects" />
