@@ -23,6 +23,7 @@ namespace GameObjects
 		{
 			base.Load(node);
 			Graphic = Image.CreateRect(64, 64, FP.Color(0x66FF33));
+			Type = "platform";
 			
 			foreach (System.Xml.XmlNode n in node)
 			{
@@ -34,6 +35,8 @@ namespace GameObjects
 				currentPosition = positionNodes[0];
 				MoveToNextPos();
 			}
+			
+			SetHitbox(64,64,0,0);
 		}
 		
 		public void MoveToNextPos()

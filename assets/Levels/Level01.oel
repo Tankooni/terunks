@@ -5,7 +5,6 @@
     <wallCollision id="1" x="5824" y="6656" width="1152" height="64" />
     <wallCollision id="2" x="5824" y="6144" width="64" height="512" />
     <wallCollision id="3" x="6912" y="6144" width="64" height="512" />
-    <door id="4" x="6720" y="6528" width="64" height="128" RoomLink="BossLevel" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="False" />
   </collision>
   <midGfx>
     <wallGfx id="0" x="5824" y="6080" width="64" height="64" />
@@ -70,5 +69,6 @@
     <platform id="4" x="6432" y="6528" width="128" height="64" />
     <platform id="5" x="6432" y="6592" width="128" height="64" />
     <textObj id="6" x="6624" y="6432" line1="Press up to enter door." line2="You won't be able to enter" line3="until the door turns red" />
+    <door id="4" x="6720" y="6528" width="64" height="128" RoomLink="BossLevel" DoorNum="1" DoorLink="0" DoorFace="Right" RequiresKey="False" />
   </entities>
 </level>
