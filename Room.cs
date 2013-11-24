@@ -1,4 +1,5 @@
-﻿using Punk;
+﻿using System.Linq;
+using Punk;
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace NHTI
 		Thread roomLoader;
 		Player player;
 		bool isFirst = true;
+		public bool RoomsAreLoading = false;
 		public Room()
 		{
 			foreach (string file in Directory.EnumerateFiles("assets/Levels/", "*.oel"))
@@ -39,10 +41,9 @@ namespace NHTI
 			RegisterClass<PlayerSpawn>("playerSpawn");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/test.oel"));
+			
+			
 			//world.BuildWorld("assets/Levels/test.oel");
-			this.Add(player = new Player(300, 300, 1));
-			
-			
 		}
 		
 		public override void Update()
@@ -52,6 +53,14 @@ namespace NHTI
 				GetType("Door", Doors);
 				roomLoader.Start();
 				isFirst = false;
+				
+				List<Entity> l = new List<Entity>();
+				
+				Add(player = new Player(300, 300, 1));
+				GetType("PlayerSpawn",l);
+				player.X = l[0].X;
+				player.Y = l[0].Y;
+				
 			}
 			if(Input.Down(Keyboard.Key.Escape))
 			   FP.Screen.Close();
@@ -65,19 +74,27 @@ namespace NHTI
 			
 			//FP.Log(roomLoader.IsAlive);
 			
-			if(Input.Pressed(Keyboard.Key.H)  && !roomLoader.IsAlive)
-			{
-				RemoveAll();
-				currentEnts = Rooms[Doors[1]];
-				AddList(currentEnts);
-				Add(player);
-			}
-			
 			FP.Engine.ClearColor = FP.Color(0x123410);
+		}
+		
+		public void NextRoom(Door d)
+		{
+			RemoveAll();
+			currentEnts = Rooms[d];
+			AddList(currentEnts);
+			Add(player);
+			Doors.Clear();
+			Rooms.Clear();
+			Doors = currentEnts.ToList().FindAll(e => e is Door);
+			roomLoader = new Thread(LoadRooms);
+			roomLoader.IsBackground = true;
+			roomLoader.Start();
+			
 		}
 		
 		public void LoadRooms()
 		{
+			RoomsAreLoading = true;
 			FP.Log("LoadRoom Start: " + Doors.Count);
 			foreach(Entity d in Doors)
 			{
@@ -85,6 +102,7 @@ namespace NHTI
 				FP.Log(d);
 			}
 			FP.Log("LoadRoom End");
+			RoomsAreLoading = false;
 		}
 	}
 }
