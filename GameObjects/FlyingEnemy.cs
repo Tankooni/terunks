@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Matte
- * Date: 11/23/2013
- * Time: 11:35 PM
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using Punk;
 using Punk.Graphics;
 using Punk.Tweens.Misc;
@@ -20,12 +12,12 @@ namespace GameObjects
 	/// Description of Enemy.
 	/// </summary>
 	/// 
-	public class GroundEnemy : Entity
+	public class FlyingEnemy : Entity
 	{
 		List<Vector2i> positionNodes = new List<Vector2i>();
 		Vector2i currentPosition = new Vector2i(0,0);
 		
-		public GroundEnemy() {}
+		public FlyingEnemy() {}
 		
 		public override void Load(System.Xml.XmlNode node)
 		{

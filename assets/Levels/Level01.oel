@@ -64,6 +64,7 @@
     <textObj id="0" x="6016" y="6464" line1="WASD to move." line2="Left-Click to shoot." line3="Spacebar to jump." />
     <playerSpawn id="1" x="5888" y="6528" />
     <door id="2" x="6848" y="6528" width="64" height="128" RoomLink="Level02" DoorNum="0" DoorLink="0" DoorFace="Left" RequiresKey="False" />
+	<door id="2" x="6720" y="6528" width="64" height="128" RoomLink="BossLevel" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="False" />
     <platform id="3" x="6304" y="6592" width="128" height="64" />
     <platform id="4" x="6432" y="6528" width="128" height="64" />
     <platform id="5" x="6432" y="6592" width="128" height="64" />

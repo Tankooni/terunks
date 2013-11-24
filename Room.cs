@@ -5,7 +5,6 @@ using System.Threading;
 using System.Collections.Generic;
 using GameObjects;
 using NHTI.Entities;
-using GameObjects;
 using Punk.Graphics;
 using Punk.Utils;
 using SFML.Window;
@@ -13,6 +12,32 @@ using System.IO;
 
 namespace NHTI
 {
+	public enum HatType
+	{
+		Random,
+		NoHat,
+		TopHat,
+		WWIHat,
+		Trophy,
+		CatEars,
+		Ninja,
+		Tiara,
+		Raiden,
+		Banana,
+		Key,
+		Device,
+		Fez,
+		Dunce,
+		Bow
+	}
+	public enum BackGrounds
+	{
+		Mountain,
+		Arctic,
+		Space,
+		Boss
+	}
+	
 	/// <summary>
 	/// Description of Room.
 	/// </summary>
@@ -47,6 +72,8 @@ namespace NHTI
 			RegisterClass<PlayerSpawn>("playerSpawn");
 			RegisterClass<GroundEnemy>("groundEnemy");
 			RegisterClass<TextObj>("textObj");
+			RegisterClass<FlyingEnemy>("flyingEnemy");
+			RegisterClass<Chest>("chest");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			

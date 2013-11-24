@@ -1,0 +1,46 @@
+<level width="12800" height="12800" BackType="Arctic">
+  <camera x="0" y="0" />
+  <collision>
+    <wallCollision id="0" x="5696" y="7232" width="64" height="1856" />
+    <wallCollision id="1" x="5760" y="9024" width="3456" height="64" />
+    <wallCollision id="2" x="5760" y="7232" width="3392" height="64" />
+    <wallCollision id="3" x="9152" y="7232" width="64" height="1792" />
+  </collision>
+  <midGfx>
+    <wallGfx id="0" x="5696" y="7232" width="64" height="1856" />
+    <wallGfx id="1" x="5760" y="9024" width="3456" height="64" />
+    <wallGfx id="2" x="5760" y="7232" width="3456" height="64" />
+    <wallGfx id="3" x="9152" y="7296" width="64" height="1728" />
+  </midGfx>
+  <entities>
+    <platform id="0" x="5760" y="8128" width="544" height="192" />
+    <door id="1" x="5984" y="8000" width="64" height="128" RoomLink="Level07" DoorNum="0" DoorLink="2" DoorFace="Right" RequiresKey="False" />
+    <platform id="2" x="5760" y="8832" width="992" height="192" />
+    <chest id="3" x="6048" y="8768" chestContents="Random" />
+    <platform id="4" x="6752" y="8640" width="544" height="384" />
+    <groundEnemy id="5" x="6784" y="8576">
+      <node x="7232" y="8576" />
+      <node x="6784" y="8576" />
+    </groundEnemy>
+    <flyingEnemy id="6" x="5824" y="8512">
+      <node x="6240" y="8512" />
+      <node x="5824" y="8512" />
+    </flyingEnemy>
+    <platform id="7" x="7296" y="8416" width="544" height="608" />
+    <platform id="8" x="7840" y="8672" width="1344" height="352" />
+    <platform id="9" x="8768" y="7552" width="384" height="128" />
+    <platform id="10" x="8672" y="8480" width="480" height="192" />
+    <platform id="11" x="8992" y="8320" width="128" height="64" />
+    <platform id="12" x="8288" y="8224" width="512" height="64" />
+    <groundEnemy id="13" x="8352" y="8160">
+      <node x="8736" y="8160" />
+      <node x="8352" y="8160" />
+    </groundEnemy>
+    <platform id="14" x="8192" y="8608" width="128" height="64" />
+    <platform id="15" x="7840" y="8000" width="128" height="64" />
+    <platform id="16" x="8256" y="7776" width="608" height="64" />
+    <groundEnemy id="17" x="7872" y="7936" />
+    <door id="18" x="8960" y="7424" width="64" height="128" RoomLink="Level09" DoorNum="1" DoorLink="0" DoorFace="Right" RequiresKey="False" />
+    <chest id="19" x="8224" y="8544" chestContents="Random" />
+  </entities>
+</level>

@@ -1,0 +1,41 @@
+<level width="12800" height="12800" BackType="Space">
+  <camera x="0" y="0" />
+  <collision>
+    <wallCollision id="0" x="3968" y="8512" width="64" height="576" />
+    <wallCollision id="1" x="4032" y="8512" width="2752" height="64" />
+    <wallCollision id="2" x="3968" y="9088" width="3968" height="64" />
+    <wallCollision id="3" x="6784" y="7168" width="64" height="1408" />
+    <wallCollision id="4" x="6848" y="7168" width="2944" height="64" />
+    <wallCollision id="5" x="9728" y="7168" width="64" height="1920" />
+    <wallCollision id="6" x="8640" y="9088" width="1152" height="64" />
+    <wallGfx id="7" x="3968" y="8512" width="2880" height="64" />
+    <wallGfx id="8" x="3968" y="8576" width="64" height="576" />
+    <wallGfx id="9" x="4032" y="9088" width="3904" height="64" />
+    <wallGfx id="10" x="8640" y="9088" width="1152" height="64" />
+    <wallGfx id="11" x="6784" y="7168" width="64" height="1344" />
+    <wallGfx id="12" x="6848" y="7168" width="2944" height="64" />
+    <wallGfx id="13" x="9728" y="7232" width="64" height="1856" />
+    <wallCollision id="14" x="7936" y="9088" width="64" height="64" />
+    <wallCollision id="15" x="8000" y="9088" width="64" height="64" />
+    <wallCollision id="16" x="8576" y="9088" width="64" height="64" />
+    <wallCollision id="17" x="8512" y="9088" width="64" height="64" />
+  </collision>
+  <midGfx>
+    <wallGfx id="0" x="7936" y="9088" width="64" height="64" />
+    <wallGfx id="1" x="8000" y="9088" width="64" height="64" />
+    <wallGfx id="2" x="8512" y="9088" width="64" height="64" />
+    <wallGfx id="3" x="8576" y="9088" width="64" height="64" />
+  </midGfx>
+  <entities>
+    <door id="0" x="4128" y="8960" width="64" height="128" RoomLink="Level01" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
+    <chest id="1" x="5824" y="9024" chestContents="Random" />
+    <chest id="2" x="4768" y="9024" chestContents="Random" />
+    <chest id="3" x="5024" y="9024" chestContents="Random" />
+    <chest id="4" x="5280" y="9024" chestContents="Random" />
+    <chest id="5" x="5536" y="9024" chestContents="Random" />
+    <platform id="6" x="7552" y="8768" width="480" height="96" />
+    <platform id="7" x="8544" y="8768" width="480" height="96" />
+    <bossSpawn id="8" x="7808" y="8320" isLeft="True" />
+    <bossSpawn id="9" x="8800" y="8320" isLeft="False" />
+  </entities>
+</level>

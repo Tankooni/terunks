@@ -1,10 +1,10 @@
-<level width="12800" height="12800">
+<level width="12800" height="12800" BackType="Mountain">
   <camera x="0" y="0" />
   <collision>
-    <wallCollision id="0" x="5888" y="6080" width="64" height="768" />
-    <wallCollision id="1" x="5952" y="6784" width="1344" height="64" />
-    <wallCollision id="2" x="5952" y="6080" width="1344" height="64" />
-    <wallCollision id="3" x="7232" y="6144" width="64" height="640" />
+    <wallCollision id="0" x="5888" y="6144" width="64" height="640" />
+    <wallCollision id="1" x="5952" y="6784" width="1280" height="64" />
+    <wallCollision id="2" x="5952" y="6080" width="1280" height="64" />
+    <wallCollision id="3" x="7232" y="6144" width="64" height="576" />
   </collision>
   <midGfx>
     <wallGfx id="0" x="5888" y="6080" width="64" height="64" />
@@ -78,17 +78,17 @@
     <textObj id="0" x="6560" y="6592" line1="One of these chest holds a key." line2="The other holds a festive hat," line3="eitherway you need the key to get through the doors." />
     <platform id="1" x="6368" y="6688" width="128" height="96" />
     <platform id="2" x="6688" y="6688" width="128" height="96" />
-    <chest id="3" x="6368" y="6624" chestContents="Random" />
-    <chest id="4" x="6752" y="6624" chestContents="Random" />
-    <door id="5" x="5952" y="6656" width="64" height="128" RoomLink="Level05" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
-    <door id="6" x="7168" y="6656" width="64" height="128" RoomLink="Level05" DoorNum="1" DoorLink="1" DoorFace="Left" RequiresKey="True" />
+    <chest id="3" x="6368" y="6624" chestContents="TopHat" />
+    <chest id="4" x="6752" y="6624" chestContents="Key" />
+    <door id="5" x="5952" y="6656" width="64" height="128" RoomLink="Level05" DoorNum="1" DoorLink="0" DoorFace="Right" RequiresKey="True" />
+    <door id="6" x="7168" y="6656" width="64" height="128" RoomLink="Level05" DoorNum="2" DoorLink="1" DoorFace="Left" RequiresKey="True" />
     <groundEnemy id="7" x="6016" y="6720">
       <node x="6336" y="6720" />
       <node x="6048" y="6720" />
     </groundEnemy>
-    <groundEnemy id="8" x="7072" y="6720">
-      <node x="6848" y="6720" />
-      <node x="7072" y="6720" />
+    <groundEnemy id="8" x="7104" y="6720">
+      <node x="6880" y="6720" />
+      <node x="7104" y="6720" />
     </groundEnemy>
   </entities>
 </level>
