@@ -170,7 +170,8 @@ namespace NHTI.Entities
 			//Attack
 			if(Input.Pressed(Mouse.Button.Left))
 			{
-				faceSprites.Play(hat.attackStart());
+				//faceSprites.Play(hat.attackStart());
+				
 				isAttacking = true;
 			}
 			else if(Input.Released(Mouse.Button.Left))
@@ -277,7 +278,7 @@ namespace NHTI.Entities
 				faceSprites.Play("FallIdle");
 			else if(faceSprites.CurrentAnim == "Release")
 			{
-				faceSprites.Play(hat.attackEnd());
+				//faceSprites.Play(hat.attackEnd());
 				isAttacking = false;
 			}
 		}	
