@@ -11,7 +11,7 @@ using Punk;
 using Punk.Graphics;
 
 
-namespace NHTI.GameObjects
+namespace GameObjects
 {
 	/// <summary>
 	/// Description of Enemy.
@@ -19,17 +19,15 @@ namespace NHTI.GameObjects
 	/// 
 	public class Enemy : Entity
 	{
-		
-		Graphic = Image.CreateRect(50, 50, FP.Color(0x66FF33);
+		public Enemy()
+		{
+			
+		}
 		
 		public override void Load(System.Xml.XmlNode node)
 		{
 			base.Load(node);
-		}
-		
-		public Enemy()
-		{
-			
+			Graphic = Image.CreateRect(50, 50, FP.Color(0x66FF33));
 		}
 	}
 }
