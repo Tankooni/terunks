@@ -225,7 +225,7 @@
         <Y>0</Y>
       </Origin>
       <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
-        <RectColor A="255" R="255" G="0" B="0" />
+        <RectColor A="255" R="128" G="0" B="255" />
       </ImageDefinition>
       <ValueDefinitions>
         <ValueDefinition xsi:type="StringValueDefinition" Name="line1" Default="" MaxChars="-1" MultiLine="false" />

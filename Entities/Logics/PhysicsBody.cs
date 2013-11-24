@@ -57,6 +57,8 @@ public class PhysicsBody : Logic
 		private bool canMoveX = true;
 		private bool canMoveY = true;
 		public bool isGrounded = true;
+		public bool hasGravity = true;
+		public bool hasFriction = true;
 		
 		private float frictionFactor = .90f;
 		private const float airFriction = 0.9f;
@@ -83,7 +85,10 @@ public class PhysicsBody : Logic
 			
 			//update velocity
 			velocity.X += acceleration.X;
-			velocity.Y += acceleration.Y - Gravity;
+			velocity.Y += acceleration.Y;
+			
+			if(hasGravity)
+				velocity.Y -= Gravity;
 			
 			if(!canMoveX)
 				velocity.X = 0;
@@ -96,7 +101,8 @@ public class PhysicsBody : Logic
 				velocity.X = -maxXVelocity;
 			
 			//Insert friction stuff here
-			velocity.X *= frictionFactor;
+			if(hasFriction)
+				velocity.X *= frictionFactor;
 			
 			//Actual Movement
 			float x = Parent.X, y = Parent.Y;

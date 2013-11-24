@@ -63,8 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Bubble.cs" />
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Projectile.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Door.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="GameObjects\wallColTile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Hats\Hat.cs" />
+    <Compile Include="Hats\NoHat.cs" />
     <Compile Include="Hats\SnowHat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,11 +88,16 @@
     <Folder Include="Entities" />
     <Folder Include="Entities\Logics" />
     <Compile Include="Room.cs" />
+    <Folder Include="Entities\Logics" />
+    <Folder Include="Hats" />
     <Folder Include="Utilities" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameObjects" />
     <Folder Include="Hats" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\Player.cs.orig" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
