@@ -20,8 +20,16 @@ namespace GameObjects
 			base.Load(node);
 			Graphic = image = new Image(Library.GetTexture("assets/" + path + ".png"));
 			
+			X = Y = 0;
 			image.ScrollX = 0;
 			image.ScrollY = 0;
+		}
+		
+		public override void Added()
+		{
+			base.Added();
+			
+			Layer = 1000000000;
 		}
 	}
 }

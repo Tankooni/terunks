@@ -54,6 +54,7 @@ namespace NHTI
 		public int enterDoor;
 		public Door startDoor;
 		public Cursor cursor;
+		public Sfx musics;
 		
 		public string[] backgrounds = new string[] {"assets/Scene1.png", "assets/Scene1.png", "assets/Scene1.png", "assets/Scene1.png", "assets/Scene2.png", "assets/Scene2.png", "assets/Scene2.png", "assets/Scene3.png", "assets/Scene3.png", "assets/Scene3.png", "assets/Scene4.png"};
 		
@@ -82,6 +83,13 @@ namespace NHTI
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			
 			Add(cursor = new Cursor());
+			musics = new Sfx(Library.GetBuffer("assets/Preview2.ogg"));
+		}
+		
+		public override void Begin()
+		{
+			base.Begin();
+			musics.Loop();
 		}
 		
 		public override void Update()
