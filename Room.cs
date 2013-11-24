@@ -80,7 +80,7 @@ namespace NHTI
 		
 		public void NextRoom(Door d)
 		{
-			enterDoor = d.DoorLink
+			enterDoor = d.DoorLink;
 			RemoveAll();
 			currentEnts = Rooms[d];
 			AddList(currentEnts);
