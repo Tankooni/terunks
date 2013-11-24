@@ -24,6 +24,7 @@ namespace GameObjects
 		public int DoorNum = 0, DoorLink = 0;
 		public DoorFace face;
 		public const string Collision = "Door";
+		public bool isReady = false;
 		
 		public Door()
 		{
@@ -35,7 +36,14 @@ namespace GameObjects
 			if(Collide(Player.Collision,X,Y) != null)
 			{
 				FP.Log("Collided with player");
-				(World as Room).NextRoom(this);
+				
+				if(isReady)
+					(World as Room).NextRoom(this);
+				//else
+					//(World as Room).player.
+				//else
+					
+				
 			}
 		}
 		
