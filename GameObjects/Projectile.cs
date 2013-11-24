@@ -15,22 +15,24 @@ namespace NHTI.GameObjects
 	/// <summary>
 	/// Description of Projectile.
 	/// </summary>
-	public class Projectile
+	public class Projectile : Entity
 	{
-		public Nineslice image;
+		public Image image;
 		
 		int xVelocity = 0;
 		int yVelocity = 0;
 		
 		public Projectile(int sentXVel, int sentYVel)
 		{
-			image = new Nineslice(Library.GetTexture("assets/Snowball.png"), 3, 3);
+			Type = "Projectile";
+			Graphic = image = new Image(Library.GetTexture("assets/Snowball.png"));
 			xVelocity = sentXVel;
 			yVelocity = sentYVel;
 		}
-		
-		public void Update()
+
+		public override void Update()
 		{
+			base.Update();
 			image.X += xVelocity;
 			image.Y += yVelocity;
 		}
