@@ -34,11 +34,11 @@ namespace NHTI.Hats
 			{ "Tiara", new AnimationData (1, FP.Frames(7), true, null)},
 			{ "Raiden", new AnimationData (1, FP.Frames(8), true, null)},
 			{ "Banana", new AnimationData (1, FP.Frames(9), true, null)},
-			{ "KeyHat", new AnimationData (1, FP.Frames(10), true, null)},
-			{ "TheDevice", new AnimationData (1, FP.Frames(11), true, null)},
-			{ "Fez", new AnimationData (1, FP.Frames(12), true, null)},
-			{ "Dunce", new AnimationData (1, FP.Frames(13), true, null)},
-			{ "Bow", new AnimationData (1, FP.Frames(14), true, null)}
+			{ "TheDevice", new AnimationData (1, FP.Frames(10), true, null)},
+			{ "Fez", new AnimationData (1, FP.Frames(11), true, null)},
+			{ "Dunce", new AnimationData (1, FP.Frames(12), true, null)},
+			{ "KeyHat", new AnimationData (1, FP.Frames(13), true, null)},
+			{ "Bow", new AnimationData (1, FP.MakeFrames(14, 19, 1), true, null)}
 		};
 		/*public static Dictionary<string, AnimationData> projDict = new Dictionary<string, AnimationData>()
 		{
