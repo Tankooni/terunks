@@ -18,9 +18,9 @@ namespace NHTI.Hats
 	/// <summary>
 	/// Description of Hat.
 	/// </summary>
-	public abstract class Hat
+	public abstract class Hat : Entity
 	{
-		public static Spritemap hatmap = new Spritemap(Library.GetTexture("assets/Hats2.png"), 66, 66, null);
+		public static Spritemap hatmap = new Spritemap(Library.GetTexture("assets/Hats.png"), 66, 66, null);
 		//public static Spritemap projectiles = new Spritemap(Library.GetTexture("assets/Projectiles.png"), 41, 41, null);
 		
 		public static Dictionary<string, AnimationData> hatDict = new Dictionary<string, AnimationData>()
@@ -30,7 +30,7 @@ namespace NHTI.Hats
 			{ "WWI", new AnimationData (1, FP.Frames(2), true, null)},
 			{ "Trophy", new AnimationData (1, FP.Frames(3), true, null)},
 			{ "CatEars", new AnimationData (1, FP.Frames(4), true, null)},
-			{ "Ninja", new AnimationData (4, FP.Frames(5, 6), true, null)},
+			{ "Ninja", new AnimationData (8, FP.Frames(5, 6), true, null)},
 			{ "Tiara", new AnimationData (1, FP.Frames(7), true, null)},
 			{ "Raiden", new AnimationData (1, FP.Frames(8), true, null)},
 			{ "Banana", new AnimationData (1, FP.Frames(9), true, null)},
@@ -66,8 +66,15 @@ namespace NHTI.Hats
 		
 		public Player parent;
 		
-		public abstract void update();
+		public Hat()
+		{
+			CenterOrigin();
+		}
+		
+		public abstract override void Update();
 		public abstract string attackStart();
 		public abstract string attackEnd();
+		
+		//public void
 	}
 }

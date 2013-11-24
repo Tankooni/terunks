@@ -27,10 +27,16 @@ namespace NHTI.Hats
 		public Ninja(Player p)
 		{
 			parent = p;
+			
+			AddGraphic(hatmap);
+			hatmap.Play("Ninja");
 		}
 		
-		public override void update()
+		public override void Update()
 		{
+			X = parent.X - 30;
+			Y = parent.Y - parent.getFaceOffset() - 65;
+			
 			timabyby += FP.Elapsed;
 			if(timabyby >= shotChargeTime)
 			{

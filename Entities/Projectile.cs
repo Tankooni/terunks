@@ -39,6 +39,7 @@ namespace NHTI.Entities
 			physics.velocity = new Vector2f(velX, velY);
 			physics.Colliders.Add("platform");
 			physics.Colliders.Add("wall");
+			physics.Colliders.Add("enemy");
 			physics.hasGravity = false;
 			physics.hasFriction = false;
 			physics.maxXVelocity = 5;

@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using GameObjects;
 using NHTI.Entities.Logics;
 using Punk;
 using Punk.Graphics;
@@ -22,7 +23,7 @@ namespace NHTI.Entities
 			:base(velX, velY)
 		{
 			spritemap = makeSpritemap(onAnimationEnd);
-			spritemap.Add("Bubble", FP.Frames(1,2,3), 5, false);
+			spritemap.Add("Bubble", FP.Frames(1,2,3), 10, false);
 			spritemap.Add("BubbleLoop", FP.Frames(4,5,6), 5, true);
 			spritemap.Add("BubblePop", FP.Frames(7), 10, false);
 			
@@ -44,6 +45,12 @@ namespace NHTI.Entities
 		public void onCollide(Entity e)
 		{
 			spritemap.Play("BubblePop", false);
+			
+			if(e is GroundEnemy)
+			{
+				GroundEnemy enemy = (GroundEnemy)e;
+				enemy.Health -= 1;
+			}
 		}
 	}
 }
