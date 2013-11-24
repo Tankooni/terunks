@@ -53,35 +53,35 @@ namespace NHTI.Entities
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
 			{ "Idle", new AnimationData (10, FP.Frames(0), true, new int[]{160})},
-			{ "Run", new AnimationData (4, FP.MakeFrames(1,20,1), true, 
+			{ "Run", new AnimationData (4, FP.MakeFrames(2,20), true, 
 			                            new int[]{150,150,160,160,170,170,180,180,165,165,150,150,160,160,170,170,180,170,165,165})},
-			{ "Duck", new AnimationData (6, FP.MakeFrames(21,24,1), false, new int[]{150,200,240,260})},
+			{ "Duck", new AnimationData (6, FP.MakeFrames(21,24), false, new int[]{150,200,240,260})},
 			{ "DuckIdle", new AnimationData (10, FP.Frames(25), true, new int[]{260})},
-			{ "DuckStand", new AnimationData (6, FP.MakeFrames(21,24,1).Reverse().ToArray(), false, new int[]{260,240,200,150})},
-			{ "DuckShuffle", new AnimationData (8, FP.MakeFrames(26,35,1), true, new int[]{260,260,260,260,260,260,260,260,260,260})},
-			{ "Jump", new AnimationData (6, FP.MakeFrames(36,41,1), false, new int[]{150,150,75,75,65,65})},
+			{ "DuckStand", new AnimationData (6, FP.MakeFrames(21,24).Reverse().ToArray(), false, new int[]{260,240,200,150})},
+			{ "DuckShuffle", new AnimationData (8, FP.MakeFrames(26,35), true, new int[]{260,260,260,260,260,260,260,260,260,260})},
+			{ "Jump", new AnimationData (6, FP.MakeFrames(36,41), false, new int[]{150,150,75,75,65,65})},
 			{ "JumpIdle", new AnimationData (4, FP.Frames(40,41), true, new int[]{65,65})},
-			{ "Fall", new AnimationData (6, FP.MakeFrames(42,47,1), false, new int[]{65,65,115,115,150,150})},
+			{ "Fall", new AnimationData (6, FP.MakeFrames(42,47), false, new int[]{65,65,115,115,150,150})},
 			{ "FallIdle", new AnimationData (4, FP.Frames(46,47), true, new int[]{150,150})},
 			{ "Dash", new AnimationData (10, FP.Frames(48,49), true, null)},
-			{ "Stagger1", new AnimationData (8, FP.MakeFrames(50,54,1), false, null)},
-			{ "Stagger2", new AnimationData (8, FP.MakeFrames(55,59,1), false, null)},
-			{ "Death", new AnimationData (4, FP.MakeFrames(60,91,1), false, null)},
-			{ "Dance", new AnimationData (6, FP.MakeFrames(92, 106,1), false, null)}
+			{ "Stagger1", new AnimationData (8, FP.MakeFrames(50,54), false, null)},
+			{ "Stagger2", new AnimationData (8, FP.MakeFrames(55,59), false, null)},
+			{ "Death", new AnimationData (4, FP.MakeFrames(60,91), false, null)},
+			{ "Dance", new AnimationData (6, FP.MakeFrames(92, 106), false, null)}
 		};
 		
 		public static Dictionary<string, AnimationData> FaceAnimDict = new Dictionary<string, AnimationData>()
 		{
 			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
 			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
-			{ "Run", new AnimationData (4, FP.MakeFrames(2,21,1), true, null)},
-			{ "Jump", new AnimationData (8, FP.MakeFrames(22, 25, 1), false, null)},
-			{ "JumpIdle", new AnimationData (4, FP.MakeFrames(26, 27, 1), true, null)},
+			{ "Run", new AnimationData (4, FP.MakeFrames(2,21), true, null)},
+			{ "Jump", new AnimationData (8, FP.MakeFrames(22, 25), false, null)},
+			{ "JumpIdle", new AnimationData (4, FP.MakeFrames(26, 27), true, null)},
 			{ "Fall", new AnimationData (4, FP.MakeFrames(28, 31, 1), false, null)},
-			{ "FallIdle", new AnimationData (4, FP.MakeFrames(32, 33, 1), true, null)},
-			{ "ChargeAttack", new AnimationData (3, FP.MakeFrames(34, 41, 1), false, null)},
-			{ "ChargeAttackLoop", new AnimationData (1, FP.MakeFrames(42,45, 1), true, null)},
-			{ "Release", new AnimationData (6, FP.MakeFrames(46, 57, 1), false, null)}
+			{ "FallIdle", new AnimationData (4, FP.MakeFrames(32, 33), true, null)},
+			{ "ChargeAttack", new AnimationData (3, FP.MakeFrames(34, 41), false, null)},
+			{ "ChargeAttackLoop", new AnimationData (1, FP.MakeFrames(42,45), true, null)},
+			{ "Release", new AnimationData (6, FP.MakeFrames(46, 57), false, null)}
 		};
 		
 		//Stats
@@ -172,7 +172,6 @@ namespace NHTI.Entities
 			if(Input.Pressed(Mouse.Button.Left))
 			{
 				faceSprites.Play(hat.attackStart());
-				//faceSprites.Play("ChargingAttack");
 				isAttacking = true;
 			}
 			else if(Input.Released(Mouse.Button.Left))
@@ -280,7 +279,6 @@ namespace NHTI.Entities
 			else if(faceSprites.CurrentAnim == "Release")
 			{
 				faceSprites.Play(hat.attackEnd());
-				//faceSprites.Play("Idle");
 				isAttacking = false;
 			}
 		}	
