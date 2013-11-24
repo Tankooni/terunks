@@ -149,7 +149,20 @@ namespace NHTI.Entities
 		}
 		
 		public override void Update()
-		{			
+		{
+			if(Input.Pressed(Mouse.Button.Right))
+			{
+				World.Remove(hat);
+				
+				if(hat is NoHat)
+					hat = new Ninja(this);
+				else
+					hat = new NoHat(this);
+				
+				World.Add(hat);
+			}
+			
+			
 			//Movement
 			if(!isHurt)
 			{

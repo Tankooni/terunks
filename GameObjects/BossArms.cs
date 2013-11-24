@@ -22,7 +22,7 @@ namespace NHTI.GameObjects
 		public Player p;
 		public float fireballSpeed = 5;
 		
-		private int health = 100; 
+		private int health = 10; 
 		public int Health {
 			set{
 				health = value;
@@ -43,7 +43,9 @@ namespace NHTI.GameObjects
 			
 			AddGraphic(arms);
 			
-			SetHitbox(256,256, 128, 128);
+			SetHitbox(256, 256, 128, 128);
+			
+			Type = "enemy";
 			
 			arms.Play("Idle");
 		}
@@ -57,7 +59,11 @@ namespace NHTI.GameObjects
 				arms.Play("Attack");
 				
 				float vx = p.X + 32 - X;
-				float vy = Y + 32 - p.Y;
+				float vy = Y + 32 - p.Y + 50;
+				
+				vx *= .8f + FP.Rand(4000) / 10000f;
+				vy *= .8f + FP.Rand(4000) / 10000f;
+				
 				float mag = (float) Math.Sqrt(vx*vx + vy*vy);
 				vx *= fireballSpeed / mag;
 				vy *= fireballSpeed / mag;
