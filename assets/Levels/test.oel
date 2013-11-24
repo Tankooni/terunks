@@ -240,12 +240,12 @@
     <playerSpawn id="226" x="7168" y="7808" />
     <platform id="0" x="6816" y="7744" width="128" height="64" />
     <platform id="1" x="6560" y="7648" width="128" height="64" />
-    <platform id="2" x="6272" y="7520" width="128" height="64" />
-    <platform id="3" x="6496" y="7360" width="128" height="64" />
+    <platform id="2" x="6304" y="7552" width="128" height="64" />
+    <platform id="3" x="6112" y="7424" width="128" height="64" />
     <platform id="4" x="6720" y="7232" width="128" height="64" />
     <platform id="5" x="6976" y="7104" width="128" height="64" />
     <platform id="6" x="7200" y="6976" width="128" height="64" />
-    <platform id="7" x="7456" y="6848" width="128" height="64" />
+    <platform id="7" x="7392" y="6912" width="128" height="64" />
     <platform id="8" x="7200" y="6752" width="128" height="64" />
     <platform id="9" x="6912" y="6624" width="128" height="64" />
     <platform id="10" x="7168" y="6464" width="128" height="64" />
@@ -259,5 +259,14 @@
     <platform id="18" x="6784" y="5984" width="128" height="64" />
     <platform id="19" x="6720" y="5824" width="128" height="64" />
     <platform id="20" x="6848" y="5632" width="128" height="64" />
+    <platform id="21" x="7552" y="6816" width="128" height="64" />
+    <platform id="22" x="7328" y="6752" width="128" height="64" />
+    <platform id="23" x="7072" y="6752" width="128" height="64" />
+    <platform id="24" x="7328" y="6464" width="128" height="64" />
+    <platform id="25" x="7104" y="6144" width="128" height="64" />
+    <platform id="26" x="6176" y="7488" width="128" height="64" />
+    <platform id="27" x="6336" y="7296" width="128" height="64" />
+    <platform id="28" x="6528" y="7264" width="128" height="64" />
+    <platform id="29" x="6848" y="7232" width="128" height="64" />
   </entities>
 </level>
