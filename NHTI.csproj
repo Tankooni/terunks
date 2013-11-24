@@ -108,8 +108,5 @@
     <Folder Include="GameObjects" />
     <Folder Include="Hats" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Entities\Player.cs.orig" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
