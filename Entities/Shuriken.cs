@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using GameObjects;
 using Punk;
 
 namespace NHTI.Entities.Logics
@@ -34,6 +35,12 @@ namespace NHTI.Entities.Logics
 		public void onCollide(Entity e)
 		{
 			World.Remove(this);
+			
+			if(e is GroundEnemy)
+			{
+				GroundEnemy enemy = (GroundEnemy)e;
+				enemy.Health -= 2;
+			}
 		}
 	}
 		

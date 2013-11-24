@@ -85,7 +85,8 @@ namespace NHTI.Entities
 		};
 		
 		//Stats
-		public int health;
+		public int health = 6;
+		public int maxHealth = 6;
 		
 		public Hat hat;
 		
@@ -137,7 +138,13 @@ namespace NHTI.Entities
 			this.SetHitbox(48, 100, 24, 100);
 			
 			//Add a hat
-			hat = new Ninja(this);
+			hat = new NoHat(this);
+		}
+		
+		public override void Added()
+		{
+			base.Added();
+			World.Add(hat);
 		}
 		
 		public override void Update()
@@ -169,7 +176,7 @@ namespace NHTI.Entities
 			}
 			
 			//Attack
-			hat.update();
+			//hat.update();
 			if(Input.Pressed(Mouse.Button.Left))
 			{
 				string nextAnim = hat.attackStart();
@@ -190,11 +197,13 @@ namespace NHTI.Entities
 			{
 				bodySprites.FlippedX = false;
 				faceSprites.FlippedX = false;
+				Hat.hatmap.FlippedX = false;
 			}
 			else if (physics.velocity.X < 0)
 			{
 				bodySprites.FlippedX = true;
 				faceSprites.FlippedX = true;
+				Hat.hatmap.FlippedX = true;
 			}
 				
 			//Ground
@@ -284,12 +293,21 @@ namespace NHTI.Entities
 				faceSprites.Play(hat.attackEnd());
 				isAttacking = false;
 			}
-		}	
-		
-		public override void Added()
-		{
-			base.Added();
 		}
 		
+		public int getFaceOffset()
+		{
+			if(bodySprites.CurrentAnim != "")
+			{
+				AnimationData animData = BodyAnimDict[bodySprites.CurrentAnim];
+				int[] yoffset = animData.yFacePoints;
+				if(yoffset != null)
+				{
+					return bodySprites.Height - yoffset[bodySprites.Index]/4
+											+ faceSprites.Height - 10;
+				}
+			}
+			return -30;
+		}
 	}
 }
