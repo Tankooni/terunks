@@ -53,7 +53,7 @@ namespace NHTI
 		public int enterDoor;
 		public Door startDoor;
 		public Cursor cursor;
-		public Image background;
+		public Image[] backgrounds;
 		
 		public Room()
 		{

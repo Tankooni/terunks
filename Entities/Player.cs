@@ -291,7 +291,10 @@ namespace NHTI.Entities
 				isHurt = false;
 			}
 			else if(bodySprites.CurrentAnim == "Death")
-				throw new Exception("You have died!");
+			{
+				
+			}
+//				throw new Exception("You have died!");
 		}
 		public void OnAnimationEndFace()
 		{

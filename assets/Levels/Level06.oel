@@ -20,14 +20,6 @@
       <node x="7264" y="7552" />
       <node x="6624" y="7552" />
     </groundEnemy>
-    <flyingEnemy id="4" x="7296" y="7296">
-      <node x="7424" y="7424" />
-      <node x="7872" y="7392" />
-      <node x="8000" y="7296" />
-      <node x="7904" y="7168" />
-      <node x="7456" y="7168" />
-      <node x="7296" y="7296" />
-    </flyingEnemy>
     <platform id="5" x="8032" y="7264" width="352" height="96" />
     <chest id="6" x="8160" y="7200" chestContents="Random" />
     <platform id="7" x="9440" y="7296" width="800" height="320" />
@@ -55,5 +47,15 @@
     <platform id="13" x="10112" y="7072" width="128" height="64" />
     <platform id="9" x="10624" y="6880" width="320" height="128" />
     <platform id="14" x="8704" y="7392" width="480" height="64" />
+    <platform id="15" x="10368" y="7008" width="128" height="64" />
+    <flyingEnemy id="4" x="7360" y="7168">
+      <node x="7776" y="7072" />
+      <node x="7520" y="6880" />
+      <node x="7232" y="6912" />
+      <node x="7104" y="6880" />
+      <node x="7040" y="7104" />
+      <node x="7296" y="7456" />
+      <node x="7360" y="7168" />
+    </flyingEnemy>
   </entities>
 </level>

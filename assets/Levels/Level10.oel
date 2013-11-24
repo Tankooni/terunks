@@ -28,7 +28,10 @@
       <node x="5824" y="8672" />
     </flyingEnemy>
     <platform id="3" x="6528" y="8832" width="128" height="64" />
-    <groundEnemy id="4" x="6528" y="8768" />
+    <groundEnemy id="4" x="6528" y="8768">
+      <node x="6656" y="8768" />
+      <node x="6528" y="8768" />
+    </groundEnemy>
     <groundEnemy id="5" x="7488" y="9024">
       <node x="7008" y="9024" />
       <node x="7520" y="9024" />

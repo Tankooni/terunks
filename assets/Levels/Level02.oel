@@ -1,4 +1,4 @@
-<level width="12800" height="12800">
+<level width="12800" height="12800" BackType="Mountain">
   <camera x="0" y="0" />
   <collision>
     <wallCollision id="0" x="5824" y="6144" width="64" height="896" />
@@ -92,7 +92,7 @@
   </midGfx>
   <entities>
     <door id="0" x="5888" y="6208" width="128" height="64" RoomLink="Level01" DoorNum="0" DoorLink="0" DoorFace="Down" RequiresKey="False" />
-    <textObj id="1" x="6016" y="6784" line1="Hah! Haven't gotten someone width that one in awhile!" line2="" line3="" />
+    <textObj id="1" x="6016" y="6784" line1="Hah! Haven't gotten someone with that one in awhile!" line2="" line3="" />
     <platform id="2" x="6272" y="6848" width="128" height="64" />
     <platform id="3" x="6144" y="6912" width="128" height="64" />
     <platform id="4" x="6272" y="6912" width="128" height="64" />
@@ -113,5 +113,6 @@
     <platform id="22" x="7296" y="6656" width="128" height="64" />
     <door id="8" x="7040" y="6848" width="64" height="128" RoomLink="Level03" DoorNum="2" DoorLink="1" DoorFace="Right" RequiresKey="False" />
     <door id="9" x="7424" y="6400" width="64" height="128" RoomLink="Level03" DoorNum="1" DoorLink="0" DoorFace="Left" RequiresKey="False" />
+    <chest id="10" x="6272" y="6784" chestContents="Key" />
   </entities>
 </level>
