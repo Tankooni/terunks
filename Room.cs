@@ -21,10 +21,12 @@ namespace NHTI
 		public List<Entity> Doors = new List<Entity>();
 		public Dictionary<Entity, Entity[]> Rooms = new Dictionary<Entity, Entity[]>();
 		Thread roomLoader;
-		Player player;
+		public Player player;
 		bool isFirst = true;
 		public bool RoomsAreLoading = false;
 		public int enterDoor;
+		public Cursor cursor;
+		
 		public Room()
 		{
 			foreach (string file in Directory.EnumerateFiles("assets/Levels/", "*.oel"))
@@ -43,7 +45,7 @@ namespace NHTI
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/test.oel"));
 			
-			
+			Add(cursor = new Cursor());
 			//world.BuildWorld("assets/Levels/test.oel");
 		}
 		
@@ -85,6 +87,7 @@ namespace NHTI
 			currentEnts = Rooms[d];
 			AddList(currentEnts);
 			Add(player);
+			Add(cursor);
 			Doors.Clear();
 			Rooms.Clear();
 			Doors = currentEnts.ToList().FindAll(e => e is Door);
