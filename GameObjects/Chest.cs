@@ -11,7 +11,7 @@ namespace GameObjects
 	/// </summary>
 	public class Chest : Entity
 	{
-		Image image;
+		Spritemap image;
 		HatType contents;
 		public Chest(){	}
 		
@@ -25,6 +25,7 @@ namespace GameObjects
 		public override void Update()
 		{
 			base.Update();
+			
 		}
 		
 		public void onAnimationEnd()

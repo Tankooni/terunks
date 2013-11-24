@@ -84,7 +84,7 @@
     <platform id="19" x="8800" y="6656" width="224" height="64" />
     <platform id="20" x="9152" y="6528" width="288" height="64" />
     <platform id="21" x="8064" y="6400" width="512" height="64" />
-    <door id="22" x="8224" y="6272" width="64" height="128" RoomLink="Level10" DoorNum="1" DoorLink="0" DoorFace="Left" RequiresKey="True" />
+    <door id="22" x="8224" y="6272" width="64" height="128" RoomLink="BossLevel" DoorNum="1" DoorLink="0" DoorFace="Left" RequiresKey="True" />
     <chest id="23" x="6176" y="7840" chestContents="Random" />
     <flyingEnemy id="24" x="8736" y="6400">
       <node x="8736" y="6144" />
@@ -104,5 +104,8 @@
     <platform id="36" x="8352" y="7232" width="128" height="64" />
     <platform id="37" x="9120" y="6976" width="128" height="64" />
     <platform id="38" x="8960" y="6720" width="128" height="64" />
+    <platform id="39" x="9248" y="8896" width="128" height="64" />
+    <platform id="40" x="9312" y="8832" width="128" height="64" />
+    <platform id="41" x="9056" y="8736" width="128" height="64" />
   </entities>
 </level>

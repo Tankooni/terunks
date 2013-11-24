@@ -126,5 +126,8 @@
     <platform id="65" x="8832" y="7456" width="128" height="64" />
     <platform id="66" x="8928" y="7328" width="128" height="64" />
     <platform id="67" x="6400" y="8032" width="128" height="64" />
+    <platform id="68" x="8736" y="9728" width="128" height="64" />
+    <platform id="69" x="8224" y="8192" width="128" height="64" />
+    <platform id="70" x="8448" y="8096" width="128" height="64" />
   </entities>
 </level>
