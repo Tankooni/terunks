@@ -1,39 +1,97 @@
 <level width="12800" height="12800" BackType="Boss">
   <camera x="0" y="0" />
   <collision>
-    <wallCollision id="0" x="3968" y="8512" width="64" height="576" />
-    <wallCollision id="1" x="4032" y="8512" width="2752" height="64" />
-    <wallCollision id="2" x="3968" y="9088" width="4544" height="64" />
-    <wallCollision id="3" x="6784" y="7168" width="64" height="1408" />
-    <wallCollision id="4" x="6848" y="7168" width="2944" height="64" />
-    <wallCollision id="5" x="9728" y="7168" width="64" height="1920" />
-    <wallCollision id="6" x="8512" y="9088" width="1280" height="64" />
-    <wallGfx id="7" x="3968" y="8512" width="2880" height="64" />
-    <wallGfx id="8" x="3968" y="8576" width="64" height="576" />
-    <wallGfx id="9" x="4032" y="9088" width="4480" height="64" />
-    <wallGfx id="10" x="8512" y="9088" width="1280" height="64" />
-    <wallGfx id="11" x="6784" y="7168" width="64" height="1344" />
-    <wallGfx id="12" x="6848" y="7168" width="2944" height="64" />
-    <wallGfx id="13" x="9728" y="7232" width="64" height="1856" />
+    <platform id="0" x="8192" y="8704" width="192" height="64" />
+    <platform id="1" x="8384" y="8704" width="128" height="64" />
+    <platform id="2" x="8064" y="8704" width="128" height="64" />
+    <platform id="3" x="7872" y="8512" width="128" height="64" />
+    <platform id="4" x="7744" y="8512" width="128" height="64" />
+    <platform id="5" x="8576" y="8512" width="128" height="64" />
+    <platform id="6" x="8704" y="8512" width="128" height="64" />
+    <platform id="7" x="7616" y="8256" width="128" height="64" />
+    <platform id="8" x="8832" y="8256" width="128" height="64" />
+    <wallCollision id="9" x="7424" y="7680" width="64" height="1088" />
+    <wallCollision id="10" x="7424" y="8768" width="1728" height="64" />
+    <wallCollision id="11" x="9088" y="7680" width="64" height="1088" />
   </collision>
   <midGfx>
-    <wallGfx id="0" x="7936" y="9088" width="64" height="64" />
-    <wallGfx id="1" x="8000" y="9088" width="64" height="64" />
-    <wallGfx id="2" x="8512" y="9088" width="64" height="64" />
-    <wallGfx id="3" x="8576" y="9088" width="64" height="64" />
+    <wallGfx id="0" x="7424" y="7680" width="64" height="64" />
+    <wallGfx id="1" x="7424" y="7744" width="64" height="64" />
+    <wallGfx id="2" x="7424" y="7808" width="64" height="64" />
+    <wallGfx id="3" x="7424" y="7872" width="64" height="64" />
+    <wallGfx id="4" x="7424" y="7936" width="64" height="64" />
+    <wallGfx id="5" x="7424" y="8000" width="64" height="64" />
+    <wallGfx id="6" x="7424" y="8064" width="64" height="64" />
+    <wallGfx id="7" x="7424" y="8128" width="64" height="64" />
+    <wallGfx id="8" x="7424" y="8192" width="64" height="64" />
+    <wallGfx id="9" x="7424" y="8256" width="64" height="64" />
+    <wallGfx id="10" x="7424" y="8320" width="64" height="64" />
+    <wallGfx id="11" x="7424" y="8384" width="64" height="64" />
+    <wallGfx id="12" x="7424" y="8448" width="64" height="64" />
+    <wallGfx id="13" x="7424" y="8512" width="64" height="64" />
+    <wallGfx id="14" x="7424" y="8576" width="64" height="64" />
+    <wallGfx id="15" x="7424" y="8640" width="64" height="64" />
+    <wallGfx id="16" x="7424" y="8704" width="64" height="64" />
+    <wallGfx id="17" x="7424" y="8768" width="64" height="64" />
+    <wallGfx id="18" x="7488" y="8768" width="64" height="64" />
+    <wallGfx id="19" x="7552" y="8768" width="64" height="64" />
+    <wallGfx id="20" x="7616" y="8768" width="64" height="64" />
+    <wallGfx id="21" x="7680" y="8768" width="64" height="64" />
+    <wallGfx id="22" x="7744" y="8768" width="64" height="64" />
+    <wallGfx id="23" x="7808" y="8768" width="64" height="64" />
+    <wallGfx id="24" x="7872" y="8768" width="64" height="64" />
+    <wallGfx id="25" x="7936" y="8768" width="64" height="64" />
+    <wallGfx id="26" x="8000" y="8768" width="64" height="64" />
+    <wallGfx id="27" x="8064" y="8768" width="64" height="64" />
+    <wallGfx id="28" x="8128" y="8768" width="64" height="64" />
+    <wallGfx id="29" x="8192" y="8768" width="64" height="64" />
+    <wallGfx id="30" x="8256" y="8768" width="64" height="64" />
+    <wallGfx id="31" x="8320" y="8768" width="64" height="64" />
+    <wallGfx id="32" x="8384" y="8768" width="64" height="64" />
+    <wallGfx id="33" x="8448" y="8768" width="64" height="64" />
+    <wallGfx id="34" x="8512" y="8768" width="64" height="64" />
+    <wallGfx id="35" x="8576" y="8768" width="64" height="64" />
+    <wallGfx id="36" x="8640" y="8768" width="64" height="64" />
+    <wallGfx id="37" x="8704" y="8768" width="64" height="64" />
+    <wallGfx id="38" x="8768" y="8768" width="64" height="64" />
+    <wallGfx id="39" x="8832" y="8768" width="64" height="64" />
+    <wallGfx id="40" x="8896" y="8768" width="64" height="64" />
+    <wallGfx id="41" x="8960" y="8768" width="64" height="64" />
+    <wallGfx id="42" x="9024" y="8768" width="64" height="64" />
+    <wallGfx id="43" x="9088" y="8768" width="64" height="64" />
+    <wallGfx id="44" x="9088" y="8704" width="64" height="64" />
+    <wallGfx id="45" x="9088" y="8640" width="64" height="64" />
+    <wallGfx id="46" x="9088" y="8576" width="64" height="64" />
+    <wallGfx id="47" x="9088" y="8512" width="64" height="64" />
+    <wallGfx id="48" x="9088" y="8448" width="64" height="64" />
+    <wallGfx id="49" x="9088" y="8384" width="64" height="64" />
+    <wallGfx id="50" x="9088" y="8320" width="64" height="64" />
+    <wallGfx id="51" x="9088" y="8256" width="64" height="64" />
+    <wallGfx id="52" x="9088" y="8192" width="64" height="64" />
+    <wallGfx id="53" x="9088" y="8128" width="64" height="64" />
+    <wallGfx id="54" x="9088" y="8064" width="64" height="64" />
+    <wallGfx id="55" x="9088" y="8000" width="64" height="64" />
+    <wallGfx id="56" x="9088" y="7936" width="64" height="64" />
+    <wallGfx id="57" x="9088" y="7872" width="64" height="64" />
+    <wallGfx id="58" x="9088" y="7808" width="64" height="64" />
+    <wallGfx id="59" x="9088" y="7744" width="64" height="64" />
+    <wallGfx id="60" x="9088" y="7680" width="64" height="64" />
+    <flyingEnemy id="61" x="7744" y="8000">
+      <node x="7744" y="7744" />
+      <node x="7744" y="8000" />
+    </flyingEnemy>
+    <flyingEnemy id="62" x="8256" y="7808">
+      <node x="8256" y="7552" />
+      <node x="8256" y="7808" />
+    </flyingEnemy>
+    <flyingEnemy id="63" x="8768" y="8000">
+      <node x="8768" y="7744" />
+      <node x="8768" y="8000" />
+    </flyingEnemy>
+    <backDrop id="64" x="7104" y="7936" path="Scene4" />
   </midGfx>
   <entities>
-    <door id="0" x="4128" y="8960" width="64" height="128" RoomLink="Level01" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
-    <chest id="1" x="5824" y="9024" chestContents="Random" />
-    <chest id="2" x="4768" y="9024" chestContents="Random" />
-    <chest id="3" x="5024" y="9024" chestContents="Random" />
-    <chest id="4" x="5280" y="9024" chestContents="Random" />
-    <chest id="5" x="5536" y="9024" chestContents="Random" />
-    <platform id="6" x="7552" y="8768" width="480" height="96" />
-    <platform id="7" x="8544" y="8768" width="480" height="96" />
-    <bossSpawn id="8" x="8308" y="8320" isLeft="True" />
-    <platform id="10" x="7360" y="8896" width="128" height="64" />
-    <platform id="11" x="9152" y="8896" width="128" height="64" />
-    <platform id="12" x="8224" y="8704" width="128" height="64" />
+    <door id="0" x="8256" y="8576" width="64" height="128" RoomLink="" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
+    <bossSpawn id="8" x="8288" y="8256" isLeft="True" />
   </entities>
 </level>

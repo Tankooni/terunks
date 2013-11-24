@@ -55,6 +55,8 @@ namespace NHTI
 		public Door startDoor;
 		public Cursor cursor;
 		
+		public string[] backgrounds = new string[] {"assets/Scene1.png", "assets/Scene1.png", "assets/Scene1.png", "assets/Scene1.png", "assets/Scene2.png", "assets/Scene2.png", "assets/Scene2.png", "assets/Scene3.png", "assets/Scene3.png", "assets/Scene3.png", "assets/Scene4.png"};
+		
 		public Room()
 		{
 			foreach (string file in Directory.EnumerateFiles("assets/Levels/", "*.oel"))
@@ -75,6 +77,7 @@ namespace NHTI
 			RegisterClass<FlyingEnemy>("flyingEnemy");
 			RegisterClass<Chest>("chest");
 			RegisterClass<Boss>("bossSpawn");
+			RegisterClass<BackDrop>("backDrop");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			
@@ -162,7 +165,9 @@ namespace NHTI
 			foreach(Entity d in Doors)
 			{
 				if((d as Door).RoomLink != "")
+				{
 					Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
+				}
 			}
 			RoomsAreLoading = false;
 		}

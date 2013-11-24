@@ -11,6 +11,7 @@
     <wallGfx id="1" x="5952" y="6208" width="64" height="1600" />
     <wallGfx id="2" x="6016" y="7744" width="4992" height="64" />
     <wallGfx id="3" x="10944" y="6208" width="64" height="1536" />
+    <backDrop id="4" x="6016" y="6208" path="Scene2" />
   </midGfx>
   <entities>
     <platform id="0" x="6016" y="7488" width="416" height="256" />
