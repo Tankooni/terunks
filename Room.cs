@@ -96,7 +96,27 @@ namespace NHTI
 			roomLoader.IsBackground = true;
 			roomLoader.Start();
 			
-			Doors.Find( e => (e as Door).DoorNum == enterDoor);
+			var door = Doors.Find( e => (e as Door).DoorNum == enterDoor) as Door;
+			if(door.face == DoorFace.Left)
+			{
+				player.X = door.Right - player.HalfWidth;
+				player.Y = door.Bottom;
+			} 
+			else if(door.face == DoorFace.Right)
+			{
+				player.X = door.Left + player.HalfWidth;
+				player.Y = door.Bottom;
+			}
+			else if(door.face == DoorFace.Up)
+			{
+				player.X = door.HalfWidth;
+				player.Y = door.Top;
+			}
+			else if(door.face == DoorFace.Down)
+			{
+				player.X = player.HalfWidth;
+				player.Y = door.Bottom + player.Height;
+			}
 		}
 		
 		public void LoadRooms()
