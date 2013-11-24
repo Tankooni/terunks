@@ -25,7 +25,7 @@ namespace NHTI
 		/// </summary>
 		public const string SHAKE = "cameraShake";
 		
-		private float offsetX, offsetY;
+		public float offsetX, offsetY;
 		private MultiVarTween prevShaker;
 		
 		public CameraFollow()

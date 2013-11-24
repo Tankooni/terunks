@@ -81,7 +81,8 @@ namespace NHTI.Entities
 			{ "FallIdle", new AnimationData (4, FP.MakeFrames(32, 33), true, null)},
 			{ "ChargeAttack", new AnimationData (3, FP.MakeFrames(34, 41), false, null)},
 			{ "ChargeAttackLoop", new AnimationData (1, FP.MakeFrames(42,45), true, null)},
-			{ "Release", new AnimationData (6, FP.MakeFrames(46, 57), false, null)}
+			{ "ReleaseBegin", new AnimationData (6, FP.MakeFrames(46, 49), false, null)},
+			{ "ReleaseEnd", new AnimationData (6, FP.MakeFrames(50, 57), false, null)},
 		};
 		
 		//Stats
@@ -106,6 +107,7 @@ namespace NHTI.Entities
 			this.controller = new Controller(id);
 			
 			cameraFollow = new CameraFollow();
+			cameraFollow.offsetY = -175;
 			AddLogic(cameraFollow);
 			
 			physics = new PhysicsBody();
@@ -201,7 +203,7 @@ namespace NHTI.Entities
 				}
 				else if(Input.Released(Mouse.Button.Left))
 				{
-					faceSprites.Play("Release");
+					faceSprites.Play("ReleaseBegin");
 				}
 				
 			}
@@ -319,9 +321,10 @@ namespace NHTI.Entities
 			    faceSprites.Play("ChargeAttackLoop");
 			else if(faceSprites.CurrentAnim == "Fall")
 				faceSprites.Play("FallIdle");
-			else if(faceSprites.CurrentAnim == "Release")
+			else if(faceSprites.CurrentAnim == "ReleaseBegin")
 			{
-				faceSprites.Play(hat.attackEnd());
+				hat.attackEnd();
+				faceSprites.Play("ReleaseEnd");
 				isAttacking = false;
 			}
 		}
