@@ -42,6 +42,7 @@ namespace NHTI
 			RegisterClass<GfxTile>("wallGfx");
 			RegisterClass<Door>("door");
 			RegisterClass<PlayerSpawn>("playerSpawn");
+			RegisterClass<Enemy>("groundEnemy");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/test.oel"));
 			
