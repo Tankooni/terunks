@@ -22,6 +22,7 @@
     <wallGfx id="5" x="9472" y="5952" width="64" height="3072" />
     <wallGfx id="6" x="4288" y="8960" width="5184" height="64" />
     <wallGfx id="7" x="4288" y="5952" width="64" height="3008" />
+    <backDrop id="8" x="5248" y="5952" path="Scene3" />
   </midGfx>
   <entities>
     <door id="0" x="4544" y="5952" width="128" height="64" RoomLink="Level08" DoorNum="0" DoorLink="1" DoorFace="Down" RequiresKey="True" />
