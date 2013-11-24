@@ -68,6 +68,7 @@
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Projectile.cs" />
+    <Compile Include="GameObjects\BackDrop.cs" />
     <Compile Include="GameObjects\Boss.cs" />
     <Compile Include="GameObjects\Chest.cs" />
     <Compile Include="Entities\Shuriken.cs" />

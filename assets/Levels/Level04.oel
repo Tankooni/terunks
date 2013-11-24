@@ -72,6 +72,7 @@
     <wallGfx id="62" x="6080" y="6080" width="64" height="64" />
     <wallGfx id="63" x="6016" y="6080" width="64" height="64" />
     <wallGfx id="64" x="5952" y="6080" width="64" height="64" />
+    <backDrop id="65" x="5952" y="6144" path="Scene1" />
   </midGfx>
   <entities>
     <door id="65" x="6528" y="6144" width="128" height="64" RoomLink="Level03" DoorNum="0" DoorLink="2" DoorFace="Down" RequiresKey="False" />
