@@ -8,6 +8,7 @@
  */
 using System;
 using NHTI.Entities;
+using Punk;
 using Punk.Graphics;
 
 namespace NHTI.Hats
@@ -17,7 +18,9 @@ namespace NHTI.Hats
 	/// </summary>
 	public abstract class Hat
 	{
-		//public static Spritemap hatmap = 
+		public static Spritemap hatmap = new Spritemap(Library.GetTexture("Hats2.png"), 66, 66, null);
+		public static Spritemap projectiles = new Spritemap(Library.GetTexture("Projectiles.png"), 41, 41, null));
+		                                             
 		public Player parent;
 		
 		public abstract void update();
