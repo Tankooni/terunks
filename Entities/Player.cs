@@ -52,7 +52,7 @@ namespace NHTI.Entities
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
 			{ "Idle", new AnimationData (10, FP.Frames(0), true, new int[]{160})},
-			{ "Run", new AnimationData (8, FP.MakeFrames(1,20,1), true, 
+			{ "Run", new AnimationData (4, FP.MakeFrames(1,20,1), true, 
 			                            new int[]{150,150,160,160,170,170,180,180,165,165,150,150,160,160,170,170,180,170,165,165})},
 			{ "Duck", new AnimationData (6, FP.MakeFrames(21,24,1), false, new int[]{150,200,240,260})},
 			{ "DuckIdle", new AnimationData (10, FP.Frames(25), true, new int[]{260})},
@@ -73,7 +73,7 @@ namespace NHTI.Entities
 		{
 			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
 			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
-			{ "Run", new AnimationData (2, FP.MakeFrames(2,21,1), true, null)},
+			{ "Run", new AnimationData (4, FP.MakeFrames(2,21,1), true, null)},
 			{ "Jump", new AnimationData (8, FP.MakeFrames(22, 25, 1), false, null)},
 			{ "JumpIdle", new AnimationData (4, FP.MakeFrames(26, 27, 1), true, null)},
 			{ "Fall", new AnimationData (4, FP.MakeFrames(28, 31, 1), false, null)},
@@ -89,6 +89,7 @@ namespace NHTI.Entities
 		public Hat hat;
 		
 		public float jumpForce = 20.0f;
+		public float speed = 1f;
 		
 		//Other stuff
 		PhysicsBody physics;
@@ -106,7 +107,7 @@ namespace NHTI.Entities
 			physics = new PhysicsBody();
 			physics.Colliders.Add("platform");
 			physics.Colliders.Add("wall");
-			physics.maxXVelocity = 5f;
+			physics.maxXVelocity = 8f;
 			AddLogic(physics);
 			
 			//Add sprites
@@ -147,12 +148,16 @@ namespace NHTI.Entities
 			}
 			
 			if(Input.Check(Keyboard.Key.A))
-				physics.velocity.X -= 1f;
+				physics.velocity.X -= this.speed;
 			if(Input.Check(Keyboard.Key.D))
-				physics.velocity.X += 1f;
+				physics.velocity.X += this.speed;
 			
 			if(Input.Check(Keyboard.Key.S))
+			{
+				if(!isDucking)
+					bodySprites.Play("Duck");
 				isDucking = true;
+			}
 			else
 			{
 				if(isDucking)
@@ -193,8 +198,9 @@ namespace NHTI.Entities
 				{
 					//Idle
 					if(physics.velocity.X == 0)
-						if(bodySprites.CurrentAnim != "DuckIdle")
-							bodySprites.Play("Duck");
+					{
+						bodySprites.Play("DuckIdle");
+					}
 					//Run
 					else
 						bodySprites.Play("DuckShuffle", false);
