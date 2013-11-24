@@ -37,7 +37,7 @@ namespace GameObjects
 			{
 				FP.Log("Collided with player");
 				
-				if(isReady)
+				if(!(World as Room).RoomsAreLoading)
 					(World as Room).NextRoom(this);
 				//else
 					//(World as Room).player.

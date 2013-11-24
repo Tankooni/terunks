@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Door.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
