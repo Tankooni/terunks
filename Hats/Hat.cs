@@ -8,6 +8,7 @@
  */
 using System;
 using NHTI.Entities;
+using Punk.Graphics;
 
 namespace NHTI.Hats
 {
@@ -16,6 +17,10 @@ namespace NHTI.Hats
 	/// </summary>
 	public abstract class Hat
 	{
+		//public static Spritemap hatmap = 
+		public Player parent;
+		
+		public abstract void update();
 		public abstract string attackStart();
 		public abstract string attackEnd();
 	}
