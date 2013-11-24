@@ -235,8 +235,8 @@
     <wallGfx id="225" x="9152" y="7936" width="64" height="64" />
   </midGfx>
   <entities>
-    <door id="228" x="7040" y="5504" width="128" height="64" RoomLink="test2" DoorNum="1" DoorLink="0" DoorFace="Down" />
-    <door id="226" x="9152" y="7808" width="64" height="128" RoomLink="test2" DoorNum="0" DoorLink="0" DoorFace="Left" />
+    <door id="228" x="7040" y="5504" width="128" height="64" RoomLink="test2" DoorNum="1" DoorLink="0" DoorFace="Down" RequiresKey="True" />
+    <door id="226" x="9152" y="7808" width="64" height="128" RoomLink="test2" DoorNum="0" DoorLink="0" DoorFace="Left" RequiresKey="True" />
     <playerSpawn id="226" x="7168" y="7808" />
     <platform id="0" x="6816" y="7744" width="128" height="64" />
     <platform id="1" x="6560" y="7648" width="128" height="64" />
@@ -272,5 +272,17 @@
       <node x="7648" y="7872" />
       <node x="8544" y="7872" />
     </groundEnemy>
+    <flyingEnemy id="4" x="8768" y="6080">
+      <node x="8256" y="6144" />
+      <node x="8192" y="6464" />
+      <node x="8448" y="6720" />
+      <node x="8768" y="6080" />
+    </flyingEnemy>
+    <flyingEnemy id="31" x="8800" y="5856">
+      <node x="8096" y="5696" />
+      <node x="7904" y="6048" />
+      <node x="7968" y="6240" />
+      <node x="8800" y="5856" />
+    </flyingEnemy>
   </entities>
 </level>
