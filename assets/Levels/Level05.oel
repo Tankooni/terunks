@@ -16,7 +16,7 @@
   </midGfx>
   <entities>
     <platform id="0" x="5248" y="5952" width="384" height="192" />
-    <door id="2" x="5248" y="5824" width="64" height="128" RoomLink="Level04" DoorNum="1" DoorLink="1" DoorFace="Right" RequiresKey="False" />
+    <door id="2" x="5248" y="5824" width="64" height="128" RoomLink="Level04" DoorNum="0" DoorLink="1" DoorFace="Right" RequiresKey="False" />
     <platform id="3" x="5248" y="6944" width="1120" height="608" />
     <flyingEnemy id="4" x="6816" y="6048">
       <node x="6656" y="6272" />
@@ -41,12 +41,12 @@
       <node x="7904" y="6336" />
     </flyingEnemy>
     <platform id="6" x="6368" y="7040" width="384" height="512" />
-    <door id="7" x="5248" y="6816" width="64" height="128" RoomLink="Level04" DoorNum="2" DoorLink="2" DoorFace="Right" RequiresKey="False" />
+    <door id="7" x="5248" y="6816" width="64" height="128" RoomLink="Level04" DoorNum="1" DoorLink="2" DoorFace="Right" RequiresKey="False" />
     <platform id="8" x="6752" y="7136" width="992" height="416" />
     <platform id="9" x="7744" y="6976" width="864" height="576" />
     <platform id="10" x="8608" y="6784" width="352" height="768" />
     <platform id="11" x="8960" y="6624" width="256" height="928" />
-    <door id="12" x="9152" y="6496" width="64" height="128" RoomLink="Level06" DoorNum="3" DoorLink="0" DoorFace="Left" RequiresKey="False" />
+    <door id="12" x="9152" y="6496" width="64" height="128" RoomLink="Level06" DoorNum="2" DoorLink="0" DoorFace="Left" RequiresKey="False" />
     <flyingEnemy id="13" x="8352" y="6112">
       <node x="8032" y="5920" />
       <node x="7808" y="6112" />

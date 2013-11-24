@@ -18,10 +18,6 @@
     <platform id="2" x="5760" y="8832" width="992" height="192" />
     <chest id="3" x="6048" y="8768" chestContents="Random" />
     <platform id="4" x="6752" y="8640" width="544" height="384" />
-    <groundEnemy id="5" x="6784" y="8576">
-      <node x="7232" y="8576" />
-      <node x="6784" y="8576" />
-    </groundEnemy>
     <flyingEnemy id="6" x="5824" y="8512">
       <node x="6240" y="8512" />
       <node x="5824" y="8512" />
@@ -39,8 +35,23 @@
     <platform id="14" x="8192" y="8608" width="128" height="64" />
     <platform id="15" x="7840" y="8000" width="128" height="64" />
     <platform id="16" x="8256" y="7776" width="608" height="64" />
-    <groundEnemy id="17" x="7872" y="7936" />
+    <groundEnemy id="17" x="7872" y="7936">
+      <node x="7936" y="7936" />
+      <node x="7872" y="7936" />
+    </groundEnemy>
     <door id="18" x="8960" y="7424" width="64" height="128" RoomLink="Level09" DoorNum="1" DoorLink="0" DoorFace="Right" RequiresKey="False" />
     <chest id="19" x="8224" y="8544" chestContents="Random" />
+    <groundEnemy id="5" x="6816" y="8576">
+      <node x="7104" y="8576" />
+      <node x="6816" y="8576" />
+    </groundEnemy>
+    <platform id="20" x="8608" y="8608" width="128" height="64" />
+    <platform id="21" x="8096" y="8192" width="128" height="64" />
+    <platform id="22" x="7936" y="8096" width="128" height="64" />
+    <platform id="23" x="8096" y="7872" width="128" height="64" />
+    <platform id="24" x="8704" y="7680" width="128" height="64" />
+    <platform id="25" x="6688" y="8768" width="128" height="64" />
+    <platform id="26" x="7232" y="8576" width="128" height="64" />
+    <platform id="27" x="7264" y="8512" width="128" height="64" />
   </entities>
 </level>

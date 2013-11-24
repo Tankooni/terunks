@@ -1,4 +1,4 @@
-<level width="12800" height="12800">
+<level width="12800" height="12800" BackType="Mountain">
   <camera x="0" y="0" />
   <collision>
     <wallCollision id="0" x="5952" y="6080" width="1856" height="64" />
@@ -115,17 +115,17 @@
     <platform id="13" x="6240" y="6144" width="128" height="64" />
     <platform id="14" x="6112" y="6272" width="128" height="64" />
     <platform id="15" x="6016" y="6272" width="128" height="64" />
-    <platform id="16" x="6240" y="6336" width="128" height="64" />
-    <platform id="17" x="6272" y="6400" width="128" height="64" />
-    <platform id="19" x="6528" y="6528" width="128" height="64" />
-    <platform id="20" x="6656" y="6528" width="128" height="64" />
-    <platform id="21" x="6784" y="6528" width="128" height="64" />
-    <platform id="22" x="6912" y="6464" width="128" height="64" />
-    <platform id="23" x="7040" y="6464" width="128" height="64" />
-    <platform id="24" x="7168" y="6464" width="128" height="64" />
-    <platform id="25" x="7296" y="6464" width="128" height="64" />
-    <platform id="26" x="7424" y="6464" width="128" height="64" />
-    <platform id="27" x="7552" y="6464" width="128" height="64" />
+    <platform id="16" x="6240" y="6400" width="128" height="64" />
+    <platform id="17" x="6272" y="6464" width="128" height="64" />
+    <platform id="19" x="6528" y="6592" width="128" height="64" />
+    <platform id="20" x="6656" y="6592" width="128" height="64" />
+    <platform id="21" x="6784" y="6592" width="128" height="64" />
+    <platform id="22" x="6912" y="6528" width="128" height="64" />
+    <platform id="23" x="7040" y="6528" width="128" height="64" />
+    <platform id="24" x="7168" y="6528" width="128" height="64" />
+    <platform id="25" x="7296" y="6528" width="128" height="64" />
+    <platform id="26" x="7424" y="6528" width="128" height="64" />
+    <platform id="27" x="7552" y="6528" width="128" height="64" />
     <platform id="28" x="6208" y="6976" width="128" height="64" />
     <platform id="29" x="6336" y="6912" width="128" height="64" />
     <platform id="30" x="6336" y="6976" width="128" height="64" />
@@ -147,9 +147,9 @@
     <platform id="46" x="7616" y="6912" width="128" height="64" />
     <platform id="47" x="7616" y="6976" width="128" height="64" />
     <platform id="48" x="7424" y="6848" width="128" height="64" />
-    <groundEnemy id="49" x="6848" y="6464">
-      <node x="6848" y="6464" />
-      <node x="6560" y="6464" />
+    <groundEnemy id="49" x="6848" y="6528">
+      <node x="6848" y="6528" />
+      <node x="6560" y="6528" />
     </groundEnemy>
     <groundEnemy id="50" x="6784" y="6912">
       <node x="6496" y="6912" />
@@ -157,7 +157,7 @@
     </groundEnemy>
     <door id="51" x="7680" y="6144" width="64" height="128" RoomLink="Level02" DoorNum="1" DoorLink="2" DoorFace="Left" RequiresKey="False" />
     <door id="52" x="7680" y="6784" width="64" height="128" RoomLink="Level04" DoorNum="2" DoorLink="0" DoorFace="Left" RequiresKey="False" />
-    <platform id="53" x="6272" y="6464" width="256" height="128" />
-    <textObj id="18" x="6784" y="6592" line1="Choosing a different path can" line2="result in the same challenges" line3="" />
+    <platform id="53" x="6272" y="6528" width="256" height="128" />
+    <textObj id="18" x="6784" y="6656" line1="Choosing a different path can" line2="result in the same challenges" line3="" />
   </entities>
 </level>

@@ -68,10 +68,13 @@
       <node x="6784" y="6976" />
       <node x="6656" y="7104" />
     </flyingEnemy>
-    <groundEnemy id="23" x="6976" y="7584" />
+    <groundEnemy id="23" x="6976" y="7584">
+      <node x="7040" y="7584" />
+      <node x="6976" y="7584" />
+    </groundEnemy>
     <platform id="24" x="6720" y="7392" width="128" height="64" />
     <platform id="25" x="6144" y="7264" width="288" height="128" />
-    <platform id="26" x="6464" y="7008" width="160" height="64" />
+    <platform id="26" x="6464" y="7040" width="160" height="64" />
     <platform id="27" x="6720" y="6848" width="192" height="64" />
     <platform id="28" x="6976" y="6656" width="224" height="64" />
     <platform id="29" x="8064" y="9344" width="320" height="448" />
@@ -103,5 +106,24 @@
     <platform id="46" x="8064" y="6528" width="224" height="64" />
     <platform id="47" x="8896" y="6784" width="192" height="96" />
     <chest id="48" x="6624" y="8288" chestContents="Random" />
+    <platform id="49" x="6496" y="7328" width="128" height="64" />
+    <platform id="50" x="6720" y="8640" width="128" height="64" />
+    <platform id="51" x="6528" y="8864" width="128" height="64" />
+    <platform id="52" x="6528" y="9184" width="128" height="64" />
+    <platform id="53" x="6080" y="9312" width="128" height="64" />
+    <platform id="54" x="6784" y="9088" width="128" height="64" />
+    <platform id="55" x="8224" y="9280" width="128" height="64" />
+    <platform id="56" x="8160" y="9216" width="128" height="64" />
+    <platform id="57" x="8096" y="9152" width="128" height="64" />
+    <platform id="58" x="8192" y="8960" width="128" height="64" />
+    <platform id="59" x="8864" y="8672" width="128" height="64" />
+    <platform id="60" x="8576" y="8064" width="128" height="64" />
+    <platform id="61" x="8384" y="7904" width="128" height="64" />
+    <platform id="62" x="8608" y="7744" width="128" height="64" />
+    <platform id="63" x="8672" y="7648" width="128" height="64" />
+    <platform id="64" x="8640" y="7200" width="128" height="64" />
+    <platform id="65" x="8832" y="7456" width="128" height="64" />
+    <platform id="66" x="8928" y="7328" width="128" height="64" />
+    <platform id="67" x="6400" y="8032" width="128" height="64" />
   </entities>
 </level>
