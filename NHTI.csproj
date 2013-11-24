@@ -67,6 +67,7 @@
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Projectile.cs" />
+    <Compile Include="Entities\Shuriken.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Door.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="GameObjects\wallColTile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Hats\Hat.cs" />
+    <Compile Include="Hats\Ninja.cs" />
     <Compile Include="Hats\NoHat.cs" />
     <Compile Include="Hats\SnowHat.cs" />
     <Compile Include="Program.cs" />

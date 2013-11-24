@@ -27,6 +27,7 @@ namespace NHTI.Entities
 		public Spritemap spritemap;
 		protected delegate void d_onCollide(Entity e);
 		protected d_onCollide _onCollide;
+		protected PhysicsBody physics;
 		
 		public Projectile(float velX, float velY)
 		{
@@ -34,7 +35,7 @@ namespace NHTI.Entities
 			CenterOrigin();
 			SetHitbox(41,41,20,20);
 			
-			PhysicsBody physics = new PhysicsBody();
+			physics = new PhysicsBody();
 			physics.velocity = new Vector2f(velX, velY);
 			physics.Colliders.Add("platform");
 			physics.Colliders.Add("wall");
