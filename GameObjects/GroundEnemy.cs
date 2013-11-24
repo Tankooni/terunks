@@ -49,17 +49,6 @@ namespace GameObjects
 			base.Load(node);
 			//Graphic = Image.CreateRect(64, 64, FP.Color(0x66FF33));
 			
-			foreach (System.Xml.XmlNode n in node)
-			{
-				FP.Log(int.Parse(n.Attributes["x"].Value) + " " + float.Parse(n.Attributes["y"].Value));
-				positionNodes.Add(new Vector2i(int.Parse(n.Attributes["x"].Value), int.Parse(n.Attributes["y"].Value)));
-			}
-			
-			
-			if(positionNodes.Count > 0)
-			{
-			nextNode = positionNodes[0];
-
 			//make the enemy hittable and all that jazz
 			Type = "enemy";
 			physics = new PhysicsBody();
@@ -85,6 +74,16 @@ namespace GameObjects
 			SetOrigin(spritemap.Width/2, 257/2);
 			SetHitbox(spritemap.Width, spritemap.Height, spritemap.Width/2, spritemap.Height);
 			
+			foreach (System.Xml.XmlNode n in node)
+			{
+				FP.Log(int.Parse(n.Attributes["x"].Value) + " " + float.Parse(n.Attributes["y"].Value));
+				positionNodes.Add(new Vector2i(int.Parse(n.Attributes["x"].Value), int.Parse(n.Attributes["y"].Value)));
+			}
+			
+			
+			if(positionNodes.Count > 0)
+			{
+				nextNode = positionNodes[0];
 				MoveToNextPos();
 			}
 		}
