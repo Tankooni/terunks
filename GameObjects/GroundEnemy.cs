@@ -20,15 +20,12 @@ namespace GameObjects
 	/// Description of Enemy.
 	/// </summary>
 	/// 
-	public class Enemy : Entity
+	public class GroundEnemy : Entity
 	{
 		List<Vector2i> positionNodes = new List<Vector2i>();
-		
 		Vector2i currentPosition = new Vector2i(0,0);
 		
-		int nodeIndex = 0;
-		
-		public Enemy() {}
+		public GroundEnemy() {}
 		
 		public override void Load(System.Xml.XmlNode node)
 		{

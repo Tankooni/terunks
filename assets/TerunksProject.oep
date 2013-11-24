@@ -24,7 +24,16 @@
     <Height>720</Height>
   </CameraSize>
   <ExportCameraPosition>true</ExportCameraPosition>
-  <LevelValueDefinitions />
+  <LevelValueDefinitions>
+    <ValueDefinition xsi:type="EnumValueDefinition" Name="BackType">
+      <Elements>
+        <string>Mountain</string>
+        <string>Arctic</string>
+        <string>Space</string>
+        <string>Boss</string>
+      </Elements>
+    </ValueDefinition>
+  </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>collision</Name>
