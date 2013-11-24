@@ -23,7 +23,7 @@
     <wallGfx id="3" x="8576" y="9088" width="64" height="64" />
   </midGfx>
   <entities>
-    <door id="0" x="4128" y="8960" width="64" height="128" RoomLink="" DoorNum="0" DoorLink="0" DoorFace="Up" RequiresKey="True" />
+    <door id="0" x="4128" y="8960" width="64" height="128" RoomLink="Level01" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
     <chest id="1" x="5824" y="9024" chestContents="Random" />
     <chest id="2" x="4768" y="9024" chestContents="Random" />
     <chest id="3" x="5024" y="9024" chestContents="Random" />
