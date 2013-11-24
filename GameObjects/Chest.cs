@@ -18,7 +18,7 @@ namespace GameObjects
 		public override void Load(System.Xml.XmlNode node)
 		{
 			base.Load(node);
-			Graphic = image = new Image(Library.GetTexture("assets/SnowHead.png"));
+//			Graphic = image = new Image(Library.GetTexture("assets/SnowHead.png"));
 			contents = (HatType) Enum.Parse(typeof(HatType), node.Attributes["chestContents"].Value);
 		}
 		

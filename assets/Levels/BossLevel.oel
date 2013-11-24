@@ -31,8 +31,7 @@
     <chest id="5" x="5536" y="9024" chestContents="Random" />
     <platform id="6" x="7552" y="8768" width="480" height="96" />
     <platform id="7" x="8544" y="8768" width="480" height="96" />
-    <bossSpawn id="8" x="7808" y="8320" isLeft="True" />
-    <bossSpawn id="9" x="8800" y="8320" isLeft="False" />
+    <bossSpawn id="8" x="8308" y="8320" isLeft="True" />
     <platform id="10" x="7360" y="8896" width="128" height="64" />
     <platform id="11" x="9152" y="8896" width="128" height="64" />
     <platform id="12" x="8224" y="8704" width="128" height="64" />

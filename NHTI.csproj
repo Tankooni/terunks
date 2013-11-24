@@ -68,11 +68,16 @@
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Projectile.cs" />
+    <Compile Include="GameObjects\Boss.cs" />
     <Compile Include="GameObjects\Chest.cs" />
     <Compile Include="Entities\Shuriken.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Door.cs" />
-    <Compile Include="GameObjects\FlyingEnemy.cs" />
+    <Compile Include="GameObjects\Enemy.cs" />
+    <Compile Include="GameObjects\FakeDoor.cs" />
+    <Compile Include="GameObjects\FlyingEnemy.cs">
+      <DependentUpon>GfxTile.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameObjects\GroundEnemy.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
     <Compile Include="GameObjects\Platform.cs" />
