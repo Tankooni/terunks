@@ -28,7 +28,7 @@ namespace NHTI.Hats
 			parent = p;
 		}
 		
-		public override void update()
+		public override void Update()
 		{
 			if(isCharging)
 			{

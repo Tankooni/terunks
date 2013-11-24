@@ -41,7 +41,7 @@ namespace NHTI.Entities
 	/// </summary>
 	public class Player : Entity
 	{
-		public const string Collision = "Player";
+		public const string CollisionType = "player";
 		public uint id;
 		public Controller controller;
 		
@@ -72,7 +72,7 @@ namespace NHTI.Entities
 		
 		public static Dictionary<string, AnimationData> FaceAnimDict = new Dictionary<string, AnimationData>()
 		{
-			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
+			{ "None", new AnimationData (10, FP.Frames(0), true, null)},
 			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
 			{ "Run", new AnimationData (8, FP.MakeFrames(2,21), true, null)},
 			{ "Jump", new AnimationData (8, FP.MakeFrames(22, 25), false, null)},
@@ -85,7 +85,8 @@ namespace NHTI.Entities
 		};
 		
 		//Stats
-		public int health;
+		public int health = 6;
+		public int maxHealth = 6;
 		
 		public Hat hat;
 		
@@ -96,10 +97,11 @@ namespace NHTI.Entities
 		PhysicsBody physics;
 		bool isDucking = false;
 		bool isAttacking = false;
+		bool isHurt = false;
 		
 		public Player(float x, float y, uint id) : base(x,y)
 		{
-			Type = Collision;
+			Type = CollisionType;
 			this.id = id;
 			this.controller = new Controller(id);
 			
@@ -140,101 +142,118 @@ namespace NHTI.Entities
 			hat = new NoHat(this);
 		}
 		
+		public override void Added()
+		{
+			base.Added();
+			World.Add(hat);
+		}
+		
 		public override void Update()
 		{			
 			//Movement
-			if(Input.Pressed(Keyboard.Key.Space) && physics.velocity.Y == 0)
+			if(!isHurt)
 			{
-				physics.velocity.Y += jumpForce;
-				bodySprites.Play("Jump");
-				if(!isAttacking) faceSprites.Play("Jump");
-			}
+				if(Input.Pressed(Keyboard.Key.Space) && physics.velocity.Y == 0)
+				{
+					physics.velocity.Y += jumpForce;
+					bodySprites.Play("Jump");
+					if(!isAttacking) faceSprites.Play("Jump");
+				}
+				
+				if(Input.Check(Keyboard.Key.A))
+					physics.velocity.X -= this.speed;
+				if(Input.Check(Keyboard.Key.D))
+					physics.velocity.X += this.speed;
+				
+				if(Input.Check(Keyboard.Key.S))
+				{
+					if(!isDucking)
+						bodySprites.Play("Duck");
+					isDucking = true;
+				}
+				else
+				{
+					if(isDucking)
+						bodySprites.Play("Stand");
+					isDucking = false;
+				}
 			
-			if(Input.Check(Keyboard.Key.A))
-				physics.velocity.X -= this.speed;
-			if(Input.Check(Keyboard.Key.D))
-				physics.velocity.X += this.speed;
-			
-			if(Input.Check(Keyboard.Key.S))
-			{
-				if(!isDucking)
-					bodySprites.Play("Duck");
-				isDucking = true;
+				//Attack
+				if(Input.Pressed(Mouse.Button.Left))
+				{
+					string nextAnim = hat.attackStart();
+					if(nextAnim != "")
+						faceSprites.Play(nextAnim);
+					isAttacking = true;
+				}
+				else if(Input.Released(Mouse.Button.Left))
+				{
+					faceSprites.Play("Release");
+				}
+				
 			}
-			else
-			{
-				if(isDucking)
-					bodySprites.Play("Stand");
-				isDucking = false;
-			}
-			
-			//Attack
-			if(Input.Pressed(Mouse.Button.Left))
-			{
-				faceSprites.Play(hat.attackStart());
-				isAttacking = true;
-			}
-			else if(Input.Released(Mouse.Button.Left))
-				faceSprites.Play("Release");
-			
 			
 			base.Update();
 			
 			//Animation stuff
-			
-			//Flippin' stuffs
-			if(physics.velocity.X > 0)
+			if(!isHurt)
 			{
-				bodySprites.FlippedX = false;
-				faceSprites.FlippedX = false;
-			}
-			else if (physics.velocity.X < 0)
-			{
-				bodySprites.FlippedX = true;
-				faceSprites.FlippedX = true;
-			}
+				//Flippin' stuffs
+				if(physics.velocity.X > 0)
+				{
+					bodySprites.FlippedX = false;
+					faceSprites.FlippedX = false;
+					Hat.hatmap.FlippedX = false;
+				}
+				else if (physics.velocity.X < 0)
+				{
+					bodySprites.FlippedX = true;
+					faceSprites.FlippedX = true;
+					Hat.hatmap.FlippedX = true;
+				}
 				
-			//Ground
-			if(physics.isGrounded)
-			{
-				if(isDucking)
+				//Ground
+				if(physics.isGrounded)
 				{
-					//Idle
-					if(physics.velocity.X == 0)
+					if(isDucking)
 					{
-						bodySprites.Play("DuckIdle");
+						//Idle
+						if(physics.velocity.X == 0)
+						{
+							bodySprites.Play("DuckIdle");
+						}
+						//Run
+						else
+							bodySprites.Play("DuckShuffle", false);
 					}
-					//Run
 					else
-						bodySprites.Play("DuckShuffle", false);
-				}
-				else
-				{
-					//Idle
-					if(physics.velocity.X == 0 && bodySprites.CurrentAnim != "Stand")
 					{
-						bodySprites.Play("Idle");
-						if(!isAttacking) faceSprites.Play("Idle");
-					}
-					//Run
-					else if(physics.velocity.X != 0)
-					{
-						bodySprites.Play("Run");
-						if(!isAttacking) faceSprites.Play("Run");
+						//Idle
+						if(physics.velocity.X == 0 && bodySprites.CurrentAnim != "Stand")
+						{
+							bodySprites.Play("Idle");
+							if(!isAttacking) faceSprites.Play("Idle");
+						}
+						//Run
+						else if(physics.velocity.X != 0)
+						{
+							bodySprites.Play("Run");
+							if(!isAttacking) faceSprites.Play("Run");
+						}
 					}
 				}
-			}
-			else //In air
-			{
-				if(physics.velocity.Y > 0)
+				else //In air
 				{
-					bodySprites.Play("JumpIdle");
-					//faceSprites.Play("JumpIdle");
-				}
-				else if (bodySprites.CurrentAnim != "FallIdle")
-				{
-					bodySprites.Play("Fall");
-					if(!isAttacking) faceSprites.Play("Fall");
+					if(physics.velocity.Y > 0)
+					{
+						bodySprites.Play("JumpIdle");
+						//faceSprites.Play("JumpIdle");
+					}
+					else if (bodySprites.CurrentAnim != "FallIdle")
+					{
+						bodySprites.Play("Fall");
+						if(!isAttacking) faceSprites.Play("Fall");
+					}
 				}
 			}
 			
@@ -265,6 +284,14 @@ namespace NHTI.Entities
 				bodySprites.Play("JumpIdle");
 			else if(bodySprites.CurrentAnim == "Fall")
 				bodySprites.Play("FallIdle");
+			else if(bodySprites.CurrentAnim == "Stagger1"
+			       || bodySprites.CurrentAnim == "Stagger2")
+			{
+				bodySprites.Play("Idle");
+				isHurt = false;
+			}
+			else if(bodySprites.CurrentAnim == "Death")
+				throw new Exception("You have died!");
 		}
 		public void OnAnimationEndFace()
 		{
@@ -281,12 +308,53 @@ namespace NHTI.Entities
 				faceSprites.Play(hat.attackEnd());
 				isAttacking = false;
 			}
-		}	
-		
-		public override void Added()
-		{
-			base.Added();
 		}
 		
+		public int getFaceOffset()
+		{
+			if(bodySprites.CurrentAnim != "")
+			{
+				AnimationData animData = BodyAnimDict[bodySprites.CurrentAnim];
+				int[] yoffset = animData.yFacePoints;
+				if(yoffset != null)
+				{
+					return bodySprites.Height - yoffset[bodySprites.Index]/4
+											+ faceSprites.Height - 10;
+				}
+			}
+			return -30;
+		}
+		
+		public void onDamage(int amount, float force, Vector2f direction)
+		{
+			if(isHurt)
+				return;
+			
+			isHurt = true;
+			
+			health -= amount;
+			if(health <= 0)
+			{
+				onDeath();
+				return;
+			}
+			
+			//make the animation make sense and good
+			physics.velocity.X += force * direction.X;
+			physics.velocity.Y += force * direction.Y;
+			
+			if(FP.Rand(2) == 1)
+				bodySprites.Play("Stagger1");
+			else
+				bodySprites.Play("Stagger2");
+			faceSprites.Play("None");
+		}
+		public void onDeath()
+		{
+			//do death stuff
+			isHurt = true;
+			faceSprites.Play("None");
+			bodySprites.Play("Death");
+		}
 	}
 }

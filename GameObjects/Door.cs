@@ -40,7 +40,7 @@ namespace GameObjects
 				(Graphic as Image).Color = FP.Color(0xFF00AA);
 			else
 				(Graphic as Image).Color = FP.Color(0xFF0000);
-			if(Collide(Player.Collision,X,Y) != null)
+			if(Collide(Player.CollisionType,X,Y) != null)
 			{
 				FP.Log("Collided with player");
 				
