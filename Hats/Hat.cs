@@ -17,8 +17,10 @@ namespace NHTI.Hats
 	/// </summary>
 	public abstract class Hat
 	{
-		//public static Spritemap hatmap =  
+		//public static Spritemap hatmap = 
+		public Player parent;
 		
+		public abstract void update();
 		public abstract string attackStart();
 		public abstract string attackEnd();
 	}
