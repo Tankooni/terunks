@@ -236,6 +236,6 @@
   </midGfx>
   <entities>
     <door id="0" x="5568" y="7808" width="64" height="128" RoomLink="test" DoorNum="0" DoorLink="0" DoorFace="Right" />
-    <door id="1" x="6624" y="7808" width="64" height="128" RoomLink="test" DoorNum="1" DoorLink="1" DoorFace="Left" />
+    <door id="1" x="6592" y="7808" width="64" height="128" RoomLink="test" DoorNum="1" DoorLink="1" DoorFace="Left" />
   </entities>
 </level>
