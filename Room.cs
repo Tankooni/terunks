@@ -24,6 +24,7 @@ namespace NHTI
 		Player player;
 		bool isFirst = true;
 		public bool RoomsAreLoading = false;
+		public int enterDoor;
 		public Room()
 		{
 			foreach (string file in Directory.EnumerateFiles("assets/Levels/", "*.oel"))
@@ -79,6 +80,7 @@ namespace NHTI
 		
 		public void NextRoom(Door d)
 		{
+			enterDoor = d.DoorLink
 			RemoveAll();
 			currentEnts = Rooms[d];
 			AddList(currentEnts);
