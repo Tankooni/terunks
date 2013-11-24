@@ -105,7 +105,7 @@ namespace GameObjects
 					spritemap.Play("Idle");
 				} else
 				{
-					spritemap.Play("Move", false);
+					spritemap.Play("Move");
 				}
 			}
 			
