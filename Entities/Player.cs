@@ -25,6 +25,7 @@ namespace NHTI.Entities
 	/// </summary>
 	public class Player : Entity
 	{
+		public const string Collision = "Player";
 		public uint id;
 		public Controller controller;
 		
@@ -98,6 +99,7 @@ namespace NHTI.Entities
 		
 		public Player(float x, float y, uint id) : base(x,y)
 		{
+			Type = Collision;
 			this.id = id;
 			this.controller = new Controller(id);
 			
@@ -283,10 +285,7 @@ namespace NHTI.Entities
 		public override void Added()
 		{
 			base.Added();
-			List<Entity> l = new List<Entity>();
-			World.GetType("PlayerSpawn",l);
-			X = l[0].X;
-			Y = l[0].Y;
+			
 		}
 		
 	}
