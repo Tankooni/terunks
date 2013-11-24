@@ -45,7 +45,7 @@ namespace GameObjects
 				FP.Log("Collided with player");
 				
 				if(!(World as Room).RoomsAreLoading && Input.Pressed(Keyboard.Key.W))
-					(World as Room).NextRoom(this);			
+					(World as Room).NextRoom(this);
 			}
 		}
 		

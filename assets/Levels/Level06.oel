@@ -1,0 +1,59 @@
+<level width="12800" height="12800" BackType="Arctic">
+  <camera x="0" y="0" />
+  <collision>
+    <wallCollision id="0" x="5952" y="6144" width="64" height="1664" />
+    <wallCollision id="1" x="6016" y="6144" width="4992" height="64" />
+    <wallCollision id="2" x="6016" y="7744" width="4992" height="64" />
+    <wallCollision id="3" x="10944" y="6208" width="64" height="1536" />
+  </collision>
+  <midGfx>
+    <wallGfx id="0" x="5952" y="6144" width="5056" height="64" />
+    <wallGfx id="1" x="5952" y="6208" width="64" height="1600" />
+    <wallGfx id="2" x="6016" y="7744" width="4992" height="64" />
+    <wallGfx id="3" x="10944" y="6208" width="64" height="1536" />
+  </midGfx>
+  <entities>
+    <platform id="0" x="6016" y="7488" width="416" height="256" />
+    <door id="1" x="6176" y="7360" width="64" height="128" RoomLink="Level05" DoorNum="0" DoorLink="3" DoorFace="Right" RequiresKey="False" />
+    <platform id="2" x="6432" y="7616" width="4512" height="128" />
+    <groundEnemy id="3" x="6624" y="7552">
+      <node x="7264" y="7552" />
+      <node x="6624" y="7552" />
+    </groundEnemy>
+    <flyingEnemy id="4" x="7296" y="7296">
+      <node x="7424" y="7424" />
+      <node x="7872" y="7392" />
+      <node x="8000" y="7296" />
+      <node x="7904" y="7168" />
+      <node x="7456" y="7168" />
+      <node x="7296" y="7296" />
+    </flyingEnemy>
+    <platform id="5" x="8032" y="7264" width="352" height="96" />
+    <chest id="6" x="8160" y="7200" chestContents="Random" />
+    <platform id="7" x="9440" y="7296" width="800" height="320" />
+    <groundEnemy id="8" x="9792" y="7232">
+      <node x="9472" y="7232" />
+      <node x="10176" y="7232" />
+    </groundEnemy>
+    <door id="10" x="10848" y="7488" width="64" height="128" RoomLink="Level07" DoorNum="1" DoorLink="1" DoorFace="Left" RequiresKey="False" />
+    <door id="11" x="10848" y="6752" width="64" height="128" RoomLink="Level07" DoorNum="2" DoorLink="0" DoorFace="Left" RequiresKey="False" />
+    <flyingEnemy id="12" x="10368" y="7360">
+      <node x="10528" y="7424" />
+      <node x="10720" y="7392" />
+      <node x="10752" y="7264" />
+      <node x="10688" y="7168" />
+      <node x="10528" y="7104" />
+      <node x="10368" y="7232" />
+      <node x="10368" y="7328" />
+      <node x="10336" y="7072" />
+      <node x="10368" y="6880" />
+      <node x="10464" y="6880" />
+      <node x="10528" y="6976" />
+      <node x="10560" y="7168" />
+      <node x="10432" y="7360" />
+    </flyingEnemy>
+    <platform id="13" x="10112" y="7072" width="128" height="64" />
+    <platform id="9" x="10624" y="6880" width="320" height="128" />
+    <platform id="14" x="8704" y="7392" width="480" height="64" />
+  </entities>
+</level>

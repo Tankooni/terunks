@@ -1,0 +1,94 @@
+<level width="12800" height="12800" BackType="Space">
+  <camera x="0" y="0" />
+  <collision>
+    <wallCollision id="0" x="4352" y="5888" width="512" height="64" />
+    <wallCollision id="1" x="4288" y="6464" width="64" height="2560" />
+    <wallCollision id="2" x="4864" y="5888" width="64" height="2560" />
+    <wallCollision id="3" x="4352" y="8960" width="64" height="64" />
+    <wallCollision id="4" x="4288" y="5888" width="64" height="576" />
+    <wallCollision id="5" x="4416" y="8960" width="4992" height="64" />
+    <wallCollision id="6" x="4928" y="8384" width="320" height="64" />
+    <wallCollision id="7" x="5184" y="5888" width="64" height="2496" />
+    <wallCollision id="8" x="5248" y="5888" width="4288" height="64" />
+    <wallCollision id="9" x="9472" y="5952" width="64" height="3072" />
+    <wallCollision id="10" x="9408" y="8960" width="64" height="64" />
+  </collision>
+  <midGfx>
+    <wallGfx id="0" x="4288" y="5888" width="640" height="64" />
+    <wallGfx id="1" x="4864" y="5952" width="64" height="2496" />
+    <wallGfx id="2" x="4928" y="8384" width="320" height="64" />
+    <wallGfx id="3" x="5184" y="5888" width="64" height="2496" />
+    <wallGfx id="4" x="5248" y="5888" width="4288" height="64" />
+    <wallGfx id="5" x="9472" y="5952" width="64" height="3072" />
+    <wallGfx id="6" x="4288" y="8960" width="5184" height="64" />
+    <wallGfx id="7" x="4288" y="5952" width="64" height="3008" />
+  </midGfx>
+  <entities>
+    <door id="0" x="4544" y="5952" width="128" height="64" RoomLink="Level08" DoorNum="0" DoorLink="1" DoorFace="Down" RequiresKey="True" />
+    <chest id="1" x="5024" y="8896" chestContents="Random" />
+    <flyingEnemy id="2" x="5728" y="8288">
+      <node x="5984" y="8480" />
+      <node x="6464" y="8544" />
+      <node x="6976" y="8512" />
+      <node x="7328" y="8320" />
+      <node x="6432" y="8544" />
+      <node x="5952" y="8480" />
+      <node x="5728" y="8288" />
+    </flyingEnemy>
+    <groundEnemy id="3" x="6496" y="8896">
+      <node x="7296" y="8896" />
+      <node x="6496" y="8896" />
+    </groundEnemy>
+    <groundEnemy id="4" x="7648" y="8896">
+      <node x="8640" y="8896" />
+      <node x="7616" y="8896" />
+    </groundEnemy>
+    <platform id="5" x="8800" y="8672" width="320" height="96" />
+    <platform id="6" x="8224" y="8448" width="320" height="96" />
+    <platform id="7" x="7616" y="8320" width="288" height="96" />
+    <flyingEnemy id="8" x="8096" y="7968">
+      <node x="8096" y="8448" />
+      <node x="8096" y="7968" />
+    </flyingEnemy>
+    <platform id="9" x="6432" y="8096" width="1152" height="96" />
+    <platform id="10" x="5984" y="7904" width="448" height="288" />
+    <groundEnemy id="11" x="6528" y="8032">
+      <node x="7488" y="8032" />
+      <node x="6528" y="8032" />
+    </groundEnemy>
+    <flyingEnemy id="12" x="5376" y="7424">
+      <node x="5536" y="7712" />
+      <node x="5760" y="7744" />
+      <node x="6016" y="7680" />
+      <node x="6080" y="7520" />
+      <node x="6016" y="7328" />
+      <node x="5792" y="7232" />
+      <node x="5504" y="7264" />
+      <node x="5376" y="7424" />
+    </flyingEnemy>
+    <platform id="13" x="6624" y="7584" width="672" height="128" />
+    <platform id="14" x="7680" y="7328" width="640" height="128" />
+    <platform id="15" x="8448" y="7072" width="672" height="96" />
+    <flyingEnemy id="16" x="7616" y="7072">
+      <node x="7968" y="7008" />
+      <node x="8512" y="6848" />
+      <node x="8768" y="6624" />
+      <node x="7616" y="7072" />
+    </flyingEnemy>
+    <groundEnemy id="17" x="8960" y="7008">
+      <node x="8512" y="7008" />
+      <node x="8992" y="7008" />
+    </groundEnemy>
+    <platform id="18" x="9184" y="6848" width="288" height="128" />
+    <platform id="19" x="8800" y="6656" width="224" height="64" />
+    <platform id="20" x="9152" y="6528" width="288" height="64" />
+    <platform id="21" x="8064" y="6400" width="512" height="64" />
+    <door id="22" x="8224" y="6272" width="64" height="128" RoomLink="Level10" DoorNum="1" DoorLink="0" DoorFace="Left" RequiresKey="True" />
+    <chest id="23" x="6176" y="7840" chestContents="Random" />
+    <flyingEnemy id="24" x="8736" y="6400">
+      <node x="8736" y="6144" />
+      <node x="8736" y="6432" />
+    </flyingEnemy>
+    <platform id="25" x="8928" y="6400" width="128" height="64" />
+  </entities>
+</level>
