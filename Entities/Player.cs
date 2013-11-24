@@ -53,7 +53,7 @@ namespace NHTI.Entities
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
 			{ "Idle", new AnimationData (10, FP.Frames(0), true, new int[]{160})},
-			{ "Run", new AnimationData (4, FP.MakeFrames(2,20), true, 
+			{ "Run", new AnimationData (8, FP.MakeFrames(2,20), true, 
 			                            new int[]{150,150,160,160,170,170,180,180,165,165,150,150,160,160,170,170,180,170,165,165})},
 			{ "Duck", new AnimationData (6, FP.MakeFrames(21,24), false, new int[]{150,200,240,260})},
 			{ "DuckIdle", new AnimationData (10, FP.Frames(25), true, new int[]{260})},
@@ -74,7 +74,7 @@ namespace NHTI.Entities
 		{
 			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
 			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
-			{ "Run", new AnimationData (4, FP.MakeFrames(2,21), true, null)},
+			{ "Run", new AnimationData (8, FP.MakeFrames(2,21), true, null)},
 			{ "Jump", new AnimationData (8, FP.MakeFrames(22, 25), false, null)},
 			{ "JumpIdle", new AnimationData (4, FP.MakeFrames(26, 27), true, null)},
 			{ "Fall", new AnimationData (4, FP.MakeFrames(28, 31, 1), false, null)},
