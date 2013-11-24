@@ -23,7 +23,7 @@ namespace NHTI
 		Thread roomLoader;
 		public Player player;
 		bool isFirst = true;
-		public bool RoomsAreLoading = false;
+		public bool RoomsAreLoading = true;
 		public int enterDoor;
 		public Cursor cursor;
 		
@@ -96,6 +96,7 @@ namespace NHTI
 			roomLoader.IsBackground = true;
 			roomLoader.Start();
 			
+			Doors.Find( e => (e as Door).DoorNum == enterDoor);
 		}
 		
 		public void LoadRooms()
