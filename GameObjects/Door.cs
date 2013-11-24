@@ -4,6 +4,8 @@ using NHTI;
 using Punk;
 using NHTI.Entities;
 using Punk.Graphics;
+using Punk.Utils;
+using SFML.Window;
 
 namespace GameObjects
 {
@@ -33,11 +35,15 @@ namespace GameObjects
 		public override void Update()
 		{
 			base.Update();
+			if((World as Room).RoomsAreLoading)
+				(Graphic as Image).Color = FP.Color(0xFF00AA);
+			else
+				(Graphic as Image).Color = FP.Color(0xFF0000);
 			if(Collide(Player.Collision,X,Y) != null)
 			{
 				FP.Log("Collided with player");
 				
-				if(!(World as Room).RoomsAreLoading)
+				if(!(World as Room).RoomsAreLoading && Input.Pressed(Keyboard.Key.W))
 					(World as Room).NextRoom(this);
 				//else
 					//(World as Room).player.
@@ -51,7 +57,7 @@ namespace GameObjects
 		{
 			base.Load(node);
 			Type = Collision;
-			Graphic = Image.CreateRect(Width, Height, FP.Color(0xFF00AA));
+			Graphic = Image.CreateRect(Width, Height, FP.Color(0x000000));
 			face = (DoorFace) Enum.Parse(typeof(DoorFace), node.Attributes["DoorFace"].Value);
 		}
 	}
