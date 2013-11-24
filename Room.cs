@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using NHTI.GameObjects;
 using Punk;
 using System;
 using System.Threading;
@@ -73,6 +74,7 @@ namespace NHTI
 			RegisterClass<TextObj>("textObj");
 			RegisterClass<FlyingEnemy>("flyingEnemy");
 			RegisterClass<Chest>("chest");
+			RegisterClass<Boss>("bossSpawn");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			
@@ -113,6 +115,8 @@ namespace NHTI
 		
 		public void NextRoom(Door d)
 		{
+//			
+			
 			enterDoor = d.DoorLink;
 			if(d.RoomLink != "")
 			{
@@ -155,13 +159,10 @@ namespace NHTI
 		public void LoadRooms()
 		{
 			RoomsAreLoading = true;
-			FP.Log("LoadRoom Start: " + Doors.Count);
 			foreach(Entity d in Doors)
 			{
 				Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
-				FP.Log(d);
 			}
-			FP.Log("LoadRoom End");
 			RoomsAreLoading = false;
 		}
 	}
