@@ -137,7 +137,7 @@ namespace NHTI.Entities
 			this.SetHitbox(48, 100, 24, 100);
 			
 			//Add a hat
-			hat = new NoHat(this);
+			hat = new Ninja(this);
 		}
 		
 		public override void Update()
@@ -169,9 +169,12 @@ namespace NHTI.Entities
 			}
 			
 			//Attack
+			hat.update();
 			if(Input.Pressed(Mouse.Button.Left))
 			{
-				faceSprites.Play(hat.attackStart());
+				string nextAnim = hat.attackStart();
+				if(nextAnim != "")
+					faceSprites.Play(nextAnim);
 				isAttacking = true;
 			}
 			else if(Input.Released(Mouse.Button.Left))
