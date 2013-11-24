@@ -42,6 +42,12 @@ namespace NHTI.GameObjects
 			cloak.Play("Idle");
 		}
 		
+		public override void Added()
+		{
+			base.Added();
+			(World as Room).musics.Stop();
+		}
+		
 		public override void Update()
 		{
 			if(FP.Distance(X,Y,World.Camera.X, World.Camera.Y) < 400)
@@ -70,6 +76,8 @@ namespace NHTI.GameObjects
 				World.Add(left);
 				World.Add(right);
 				
+				(World as Room).musics = new Sfx(Library.GetBuffer("assets/Bossedd.ogg"));
+				(World as Room).musics.Loop();
 				World.Remove(this);
 			}
 		}

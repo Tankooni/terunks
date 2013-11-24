@@ -65,7 +65,7 @@ namespace NHTI
 				FP.Log("PreloadingXML");
              	Library.GetXml(file);
 			}
-			
+			Library.GetBuffer("assets/Bossedd.ogg");
 			roomLoader = new Thread(LoadRooms);
 			roomLoader.IsBackground = true;
 			RegisterClass<wallColTile>("wallCollision");
