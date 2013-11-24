@@ -19,7 +19,7 @@ namespace NHTI.Hats
 	public abstract class Hat
 	{
 		public static Spritemap hatmap = new Spritemap(Library.GetTexture("Hats2.png"), 66, 66, null);
-		public static Spritemap projectiles = new Spritemap(Library.GetTexture("Projectiles.png"), 41, 41, null));
+		public static Spritemap projectiles = new Spritemap(Library.GetTexture("Projectiles.png"), 41, 41, null);
 		                                             
 		public Player parent;
 		

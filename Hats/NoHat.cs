@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using NHTI.Entities;
 using Punk;
 
 namespace NHTI.Hats
@@ -25,7 +26,7 @@ namespace NHTI.Hats
 			parent = p;
 		}
 		
-		public update()
+		public override void update()
 		{
 			if(isCharging)
 			{
