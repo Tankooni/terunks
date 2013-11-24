@@ -48,7 +48,7 @@ namespace GameObjects
 		{
 			currentPosition = FP.Next(currentPosition, positionNodes, true);
 			var twoon = new MultiVarTween(MoveToNextPos, ONESHOT);
-			twoon.Tween(this, new { X = currentPosition.X, Y = currentPosition.Y}, 5.0f, Ease.ElasticIn);
+			twoon.Tween(this, new { X = currentPosition.X, Y = currentPosition.Y}, 5.0f);
 			AddTween(twoon, true);
 		}
 		
