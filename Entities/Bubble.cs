@@ -9,6 +9,7 @@
 using System;
 using GameObjects;
 using NHTI.Entities.Logics;
+using NHTI.GameObjects;
 using Punk;
 using Punk.Graphics;
 
@@ -49,6 +50,11 @@ namespace NHTI.Entities
 			if(e is GroundEnemy)
 			{
 				GroundEnemy enemy = (GroundEnemy)e;
+				enemy.Health -= 1;
+			}
+			if(e is BossArms)
+			{
+				BossArms enemy = (BossArms)e;
 				enemy.Health -= 1;
 			}
 		}

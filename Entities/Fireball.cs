@@ -2,33 +2,34 @@
  * Created by SharpDevelop.
  * User: nhti
  * Date: 11/24/2013
- * Time: 7:20 AM
+ * Time: 2:24 PM
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using GameObjects;
-using NHTI.GameObjects;
 using Punk;
+using SFML.Window;
 
-namespace NHTI.Entities.Logics
+namespace NHTI.Entities
 {
 	/// <summary>
-	/// Description of Shuriken.
+	/// Description of Fireball.
 	/// </summary>
-	public class Shuriken : Projectile
+	public class Fireball : Projectile
 	{
-		public Shuriken(float velX, float velY)
+		public Fireball(float velX, float velY)
 			:base(velX, velY)
 		{
 			spritemap = makeSpritemap(null);
-			spritemap.Add("Ninja", FP.Frames(18,19), 20, true);
+			spritemap.Add("Fireball", FP.Frames(13,14), 20, true);
 			
 			AddGraphic(spritemap);
 			
-			spritemap.Play("Ninja");
+			spritemap.Play("Fireball");
 			
 			_onCollide = onCollide;
+			physics.Colliders.Add("player");
+			physics.Colliders.Remove("enemy");
 			
 			physics.maxXVelocity = 30;
 		}
@@ -37,18 +38,11 @@ namespace NHTI.Entities.Logics
 		{
 			World.Remove(this);
 			
-			if(e is GroundEnemy)
+			if(e is Player)
 			{
-				GroundEnemy enemy = (GroundEnemy)e;
-				enemy.Health -= 2;
-			}
-			if(e is BossArms)
-			{
-				BossArms enemy = (BossArms)e;
-				enemy.Health -= 1;
+				Player p = (Player)e;
+				p.onDamage(1, 2, new Vector2f((p.X - X)* .1f, (p.Y - Y)* .1f));
 			}
 		}
 	}
-		
-		
 }

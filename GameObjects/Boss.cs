@@ -17,21 +17,61 @@ namespace NHTI.GameObjects
 	/// </summary>
 	public class Boss : Enemy
 	{
-		Spritemap cloak, arms;
+		Spritemap cloak;
 		
 		public Boss()
 		{
-			cloak = new Spritemap(Library.GetTexture("assets/ArmBoss.png"), 673, 349, onAnimationEnd);
-			cloak.Add("Reveal", FP.MakeFrames(0,11), 2, false);
+
+			
+		}
+		
+		public override void Load(System.Xml.XmlNode node)
+		{
+			base.Load(node);
+			
+			cloak = new Spritemap(Library.GetTexture("assets/ArmsBosslowres.png"), 674/2, 349/2, onAnimationEnd);
+			cloak.Add("Idle", FP.Frames(0), 1, true);
+			cloak.Add("Reveal", FP.MakeFrames(0,11), 5, false);
 			
 			AddGraphic(cloak);
-			cloak.Play("Reveal");
 			
+			cloak.Scale = 4;
+			cloak.OriginX = 673/8 - 15;
+			cloak.OriginY = 349/4;			
+			
+			cloak.Play("Idle");
+		}
+		
+		public override void Update()
+		{
+			if(FP.Distance(X,Y,World.Camera.X, World.Camera.Y) < 400)
+			   cloak.Play("Reveal");
 		}
 		
 		public void onAnimationEnd()
 		{
-			//if(spritemap.CurrentAnim == "
+			if(cloak.CurrentAnim == "Reveal")
+			{
+				//kill this and spawn arms
+				BossArms right = new BossArms();
+				BossArms left = new BossArms();
+				
+				left.X = X+128;
+				left.Y = Y;
+				left.arms.FlippedX = true;
+				
+				right.X = X-128;
+				right.Y = Y;
+				right.arms.FlippedX = false;
+				
+				left.p = ((Room)World).player;
+				right.p = ((Room)World).player;
+				
+				World.Add(left);
+				World.Add(right);
+				
+				World.Remove(this);
+			}
 		}
 	}
 }
