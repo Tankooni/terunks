@@ -18,13 +18,18 @@ namespace GameObjects
 		public override void Load(System.Xml.XmlNode node)
 		{
 			base.Load(node);
-			Graphic = image = new Image(Library.GetTexture("assets/SnowHead.png"));
+			Graphic = image = new Spritemap(Library.GetTexture("assets/Chest.png"), 64, 64, onAnimationEnd);
 			contents = (HatType) Enum.Parse(typeof(HatType), node.Attributes["chestContents"].Value);
 		}
 		
 		public override void Update()
 		{
 			base.Update();
+		}
+		
+		public void onAnimationEnd()
+		{
+			
 		}
 	}
 }
