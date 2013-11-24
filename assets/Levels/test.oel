@@ -268,5 +268,9 @@
     <platform id="28" x="6528" y="7264" width="128" height="64" />
     <platform id="29" x="6848" y="7232" width="128" height="64" />
     <platform id="8" x="7200" y="6752" width="128" height="64" />
+    <groundEnemy id="30" x="8544" y="7872">
+      <node x="7648" y="7872" />
+      <node x="8544" y="7872" />
+    </groundEnemy>
   </entities>
 </level>
