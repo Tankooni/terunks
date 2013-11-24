@@ -8,13 +8,20 @@ namespace GameObjects
 	/// <summary>
 	/// Description of BackDrop.
 	/// </summary>
-	public class BackDrop
+	public class BackDrop : Entity
 	{
+		public string path;
 		public Image image;
-		public BackDrop(string path) : Entity
+		public BackDrop()
 		{
-			Graphic = image = Library.GetTexture(path);
-			image.ScrollX = image.ScrollY = 0;
+		}
+		public override void Load(System.Xml.XmlNode node)
+		{
+			base.Load(node);
+			Graphic = image = new Image(Library.GetTexture("assets/" + path + ".png"));
+			
+			image.ScrollX = 0;
+			image.ScrollY = 0;
 		}
 	}
 }

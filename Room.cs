@@ -46,7 +46,7 @@ namespace NHTI
 	{
 		public Entity[] currentEnts;
 		public List<Entity> Doors = new List<Entity>();
-		public Dictionary<Entity, List<Entity>> Rooms = new Dictionary<Entity, List<Entity>>();
+		public Dictionary<Entity, Entity[]> Rooms = new Dictionary<Entity, Entity[]>();
 		Thread roomLoader;
 		public Player player;
 		bool isFirst = true;
@@ -77,6 +77,7 @@ namespace NHTI
 			RegisterClass<FlyingEnemy>("flyingEnemy");
 			RegisterClass<Chest>("chest");
 			RegisterClass<Boss>("bossSpawn");
+			RegisterClass<BackDrop>("backDrop");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			
@@ -165,27 +166,10 @@ namespace NHTI
 			{
 				if((d as Door).RoomLink != "")
 				{
-					Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel").ToList());
-					Rooms[d].Add(new Backdrop(ReturnBackgroundString(Library.GetXml("assets/Levels/" + (d as Door).RoomLink + ".oel")
+					Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
 				}
 			}
 			RoomsAreLoading = false;
-		}
-		
-		public string ReturnBackgroundString(BackGrounds bg)
-		{
-			switch (bg)
-			{
-				case BackGrounds.Mountain:
-					return "assets/Scene1.png";
-				case BackGrounds.Arctic:
-					return "assets/Scene1.png";
-				case BackGrounds.Space:
-					return "assets/Scene1.png";
-				case BackGrounds.Boss:
-					return "assets/Scene1.png";
-					
-			}
 		}
 	}
 }

@@ -60,6 +60,7 @@
     <wallGfx id="49" x="5952" y="6080" width="64" height="64" />
     <wallGfx id="50" x="6080" y="6080" width="64" height="64" />
     <wallGfx id="51" x="6272" y="6080" width="64" height="64" />
+    <backDrop id="52" x="5888" y="6144" path="Scene1" />
   </midGfx>
   <entities>
     <textObj id="0" x="6016" y="6464" line1="WASD to move." line2="Left-Click to shoot." line3="Spacebar to jump." />
