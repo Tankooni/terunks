@@ -88,6 +88,7 @@
       <node x="8768" y="7744" />
       <node x="8768" y="8000" />
     </flyingEnemy>
+    <backDrop id="64" x="7104" y="7936" path="Scene4" />
   </midGfx>
   <entities>
     <door id="0" x="8256" y="8576" width="64" height="128" RoomLink="" DoorNum="0" DoorLink="0" DoorFace="Right" RequiresKey="True" />
