@@ -9,6 +9,7 @@
 using System;
 using NHTI.Entities;
 using Punk;
+using Punk.Utils;
 
 namespace NHTI.Hats
 {
@@ -17,6 +18,7 @@ namespace NHTI.Hats
 	/// </summary>
 	public class NoHat : Hat
 	{
+		float bubblespeed = 2;
 		bool isCharging = false;
 		float maxCharge = 5;
 		float timeCharged = 0;
@@ -44,7 +46,21 @@ namespace NHTI.Hats
 		
 		public override string attackEnd()
 		{
+			float x = parent.World.MouseX - parent.X;
+			float y = parent.Y - parent.World.MouseY;
+			//add some variance
+			x *= .9f + FP.Rand(2000) / 10000f;
+			y *= .9f + FP.Rand(2000) / 10000f;
 			
+			//normalize them
+			float mag = (float)Math.Sqrt(x*x + y*y);
+			x *= bubblespeed / mag;
+			y *= bubblespeed / mag;
+			
+			var bubble = new Bubble(x,y);
+			bubble.X = parent.X - 20;
+			bubble.Y = parent.Y - 80;
+			parent.World.Add(bubble);
 			
 			return "Idle";
 		}

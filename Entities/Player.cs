@@ -20,20 +20,6 @@ using GameObjects;
 
 namespace NHTI.Entities
 {
-	/// <summary>
-	/// Description of Player.
-	/// </summary>
-	public class Player : Entity
-	{
-		public const string Collision = "Player";
-		public uint id;
-		public Controller controller;
-		
-		public CameraFollow cameraFollow;
-		//Animation shtuffs
-		private Spritemap bodySprites;
-		private Spritemap faceSprites;
-		
 		public struct AnimationData
 		{
 			public AnimationData(int fps, int[] frames, bool loop, int[] yFacePoints)
@@ -49,6 +35,20 @@ namespace NHTI.Entities
 			
 			public int[] yFacePoints;
 		}
+	
+	/// <summary>
+	/// Description of Player.
+	/// </summary>
+	public class Player : Entity
+	{
+		public const string Collision = "Player";
+		public uint id;
+		public Controller controller;
+		
+		public CameraFollow cameraFollow;
+		//Animation shtuffs
+		private Spritemap bodySprites;
+		private Spritemap faceSprites;
 		
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
@@ -121,8 +121,6 @@ namespace NHTI.Entities
 			faceSprites.CenterOrigin();
 			faceSprites.OriginX = 21;
 			
-			//bodySprites.
-			
 			//add all the things
 			foreach(KeyValuePair<string, AnimationData> entry in BodyAnimDict)
 				bodySprites.Add(entry.Key, entry.Value.frames, entry.Value.fps, entry.Value.loop);
@@ -137,6 +135,9 @@ namespace NHTI.Entities
 			
 			this.SetOrigin(44, 100);
 			this.SetHitbox(48, 100, 24, 100);
+			
+			//Add a hat
+			hat = new NoHat(this);
 		}
 		
 		public override void Update()
@@ -171,6 +172,7 @@ namespace NHTI.Entities
 			if(Input.Pressed(Mouse.Button.Left))
 			{
 				faceSprites.Play(hat.attackStart());
+				//faceSprites.Play("ChargingAttack");
 				isAttacking = true;
 			}
 			else if(Input.Released(Mouse.Button.Left))
@@ -278,6 +280,7 @@ namespace NHTI.Entities
 			else if(faceSprites.CurrentAnim == "Release")
 			{
 				faceSprites.Play(hat.attackEnd());
+				//faceSprites.Play("Idle");
 				isAttacking = false;
 			}
 		}	
