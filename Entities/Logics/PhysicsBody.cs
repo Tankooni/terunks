@@ -83,7 +83,7 @@ public class PhysicsBody : Logic
 			
 			//update velocity
 			velocity.X += acceleration.X;
-			velocity.Y += acceleration.Y;// - Gravity;
+			velocity.Y += acceleration.Y - Gravity;
 			
 			if(!canMoveX)
 				velocity.X = 0;

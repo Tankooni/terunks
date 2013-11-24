@@ -22,7 +22,7 @@ namespace NHTI
 			if(Input.Down(Keyboard.Key.Escape))
 			   FP.Screen.Close();
 			
-//			if(Input.Down(Keyboard.Key.Escape))
+			if(Input.Down(Keyboard.Key.Escape))
 			base.Update();
 			if(Input.Down(Keyboard.Key.Left))
 				Camera.X -= 10;
