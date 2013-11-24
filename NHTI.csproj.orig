@@ -63,15 +63,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Bubble.cs" />
     <Compile Include="Entities\Logics\PhysicsBody.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Projectile.cs" />
+    <Compile Include="Entities\Shuriken.cs" />
+    <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Door.cs" />
+    <Compile Include="GameObjects\GroundEnemy.cs" />
     <Compile Include="GameObjects\GfxTile.cs" />
     <Compile Include="GameObjects\Platform.cs" />
     <Compile Include="GameObjects\PlayerSpawn.cs" />
+    <Compile Include="GameObjects\Projectile.cs" />
+    <Compile Include="GameObjects\TextObj.cs" />
     <Compile Include="GameObjects\wallColTile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Hats\Hat.cs" />
+    <Compile Include="Hats\Ninja.cs" />
+    <Compile Include="Hats\NoHat.cs" />
+    <Compile Include="Hats\SnowHat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\CameraFollow.cs" />
@@ -81,11 +91,16 @@
     <Folder Include="Entities" />
     <Folder Include="Entities\Logics" />
     <Compile Include="Room.cs" />
+    <Folder Include="Entities\Logics" />
+    <Folder Include="Hats" />
     <Folder Include="Utilities" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameObjects" />
     <Folder Include="Hats" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\Player.cs.orig" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
