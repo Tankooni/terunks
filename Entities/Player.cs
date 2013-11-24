@@ -51,7 +51,7 @@ namespace NHTI.Entities
 		public static Dictionary<string, AnimationData> BodyAnimDict = new Dictionary<string, AnimationData>()
 		{
 			{ "Idle", new AnimationData (10, FP.Frames(0), true, new int[]{160})},
-			{ "Run", new AnimationData (10, FP.MakeFrames(1,20,1), true, 
+			{ "Run", new AnimationData (10, FP.MakeFrames(1,20,1), false, 
 			                            new int[]{150,150,160,160,170,170,180,180,165,165,150,150,160,160,170,170,180,170,165,165})},
 			{ "Duck", new AnimationData (10, FP.MakeFrames(21,24,1), false, new int[]{150,200,240,260})},
 			{ "DuckIdle", new AnimationData (10, FP.Frames(25), true, new int[]{260})},
@@ -72,7 +72,7 @@ namespace NHTI.Entities
 		{
 			{ "None", new AnimationData (10, FP.Frames(0), false, null)},
 			{ "Idle", new AnimationData (10, FP.Frames(1), true, null)},
-			{ "RunIdle", new AnimationData (10, FP.MakeFrames(2,21,1), true, null)},
+			{ "RunIdle", new AnimationData (10, FP.MakeFrames(2,21,1), false, null)},
 			{ "Jump", new AnimationData (10, FP.MakeFrames(22, 27, 1), false, null)},
 			{ "JumpIdle", new AnimationData (10, FP.MakeFrames(26, 27, 1), true, null)},
 			{ "Fall", new AnimationData (10, FP.MakeFrames(28, 33, 1), false, null)},
@@ -182,10 +182,11 @@ namespace NHTI.Entities
 					if(physics.velocity.X == 0 && bodySprites.CurrentAnim != "Stand")
 						bodySprites.Play("Idle");
 					//Run
-					else if(physics.velocity.X > 0)
-						bodySprites.Play("Run");
-					else if (physics.velocity.X < 0)
-						bodySprites.Play("Run");
+					else if(physics.velocity.X != 0)
+					{
+						bodySprites.Play("Run", true);
+						faceSprites.Play("Run", true);
+					}
 				}
 			}
 			else //In air
@@ -223,9 +224,13 @@ namespace NHTI.Entities
 				bodySprites.Play("JumpIdle");
 			else if(bodySprites.CurrentAnim == "Fall")
 				bodySprites.Play("FallIdle");
+			else if(bodySprites.CurrentAnim == "Run")
+				bodySprites.Play("Idle");
 		}
 		public void OnAnimationEndFace()
 		{
+			if(faceSprites.CurrentAnim == "Run")
+				faceSprites.Play("Idle");
 		}	
 		
 		public override void Added()
