@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using NHTI.Entities;
 using NHTI.Entities.Logics;
 using Punk;
 using Punk.Graphics;
@@ -145,6 +146,26 @@ namespace GameObjects
 			else if(spritemap.CurrentAnim == "Attack")
 			{
 				isAttacking = false;
+			}
+		}
+		
+		public override bool MoveCollideX(Entity e)
+		{
+			onCollide(e);
+			return base.MoveCollideX(e);
+		}
+		public override bool MoveCollideY(Entity e)
+		{
+			onCollide(e);
+			return base.MoveCollideY(e);
+		}
+		
+		public void onCollide(Entity e)
+		{
+			if(e is Player)
+			{
+				Player p = (Player)e;
+				p.onDamage(1, 2, new Vector2f((p.X - X)* .1f, (p.Y - Y)* .1f));
 			}
 		}
 	}
