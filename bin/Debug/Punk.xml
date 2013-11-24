@@ -3385,21 +3385,21 @@
             <param name="t">Time elapsed.</param>
             <returns>Eased timescale.</returns>
         </member>
-        <member name="M:Punk.Utils.Ease.QintIn(System.Single)">
+        <member name="M:Punk.Utils.Ease.QuintIn(System.Single)">
             <summary>
             Qint in.
             </summary>
             <param name="t">Time elapsed.</param>
             <returns>Eased timescale.</returns>
         </member>
-        <member name="M:Punk.Utils.Ease.QintOut(System.Single)">
+        <member name="M:Punk.Utils.Ease.QuintOut(System.Single)">
             <summary>
             Qint out.
             </summary>
             <param name="t">Time elapsed.</param>
             <returns>Eased timescale.</returns>
         </member>
-        <member name="M:Punk.Utils.Ease.QintInOut(System.Single)">
+        <member name="M:Punk.Utils.Ease.QuintInOut(System.Single)">
             <summary>
             Qint in and out.
             </summary>
