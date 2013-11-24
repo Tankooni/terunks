@@ -64,9 +64,9 @@ namespace NHTI
 				
 				Add(player = new Player(300, 300, 1));
 				GetType("PlayerSpawn",l);
-				FP.Log(l[0].Width);
-				player.X = l[0].X + l[0].HalfWidth;
-				player.Y = l[0].Y + l[0].HalfHeight;
+				//FP.Log(l[0].);
+				player.X = l[0].X + player.HalfWidth;
+				player.Y = l[0].Y + player.HalfHeight;
 				
 			}
 			
@@ -103,12 +103,12 @@ namespace NHTI
 			var door = Doors.Find( e => (e as Door).DoorNum == enterDoor) as Door;
 			if(door.face == DoorFace.Left)
 			{
-				player.X = door.Right - player.HalfWidth;
+				player.X = door.Left - player.HalfWidth;
 				player.Y = door.Bottom;
 			} 
 			else if(door.face == DoorFace.Right)
 			{
-				player.X = door.Left + player.HalfWidth;
+				player.X = door.Right + player.HalfWidth;
 				player.Y = door.Bottom;
 			}
 			else if(door.face == DoorFace.Up)
@@ -118,7 +118,7 @@ namespace NHTI
 			}
 			else if(door.face == DoorFace.Down)
 			{
-				player.X = door.X;
+				player.X = door.X + door.HalfWidth;
 				player.Y = door.Bottom + player.Height;
 			}
 		}
