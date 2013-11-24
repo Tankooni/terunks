@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using GameObjects;
 using NHTI.Entities;
 using GameObjects;
+using Punk.Graphics;
 using Punk.Utils;
 using SFML.Window;
 using System.IO;
@@ -27,6 +28,7 @@ namespace NHTI
 		public int enterDoor;
 		public Door startDoor;
 		public Cursor cursor;
+		public Image background;
 		
 		public Room()
 		{
@@ -43,7 +45,8 @@ namespace NHTI
 			RegisterClass<GfxTile>("wallGfx");
 			RegisterClass<Door>("door");
 			RegisterClass<PlayerSpawn>("playerSpawn");
-			RegisterClass<Enemy>("groundEnemy");
+			RegisterClass<GroundEnemy>("groundEnemy");
+			RegisterClass<TextObj>("textObj");
 			
 			AddList(currentEnts = BuildWorldAsArray("assets/Levels/Level01.oel"));
 			

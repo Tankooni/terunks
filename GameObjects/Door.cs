@@ -27,6 +27,7 @@ namespace GameObjects
 		public DoorFace face;
 		public const string Collision = "Door";
 		public bool isReady = false;
+		public bool RequiresKey;
 		
 		public Door()
 		{
@@ -44,12 +45,7 @@ namespace GameObjects
 				FP.Log("Collided with player");
 				
 				if(!(World as Room).RoomsAreLoading && Input.Pressed(Keyboard.Key.W))
-					(World as Room).NextRoom(this);
-				//else
-					//(World as Room).player.
-				//else
-					
-				
+					(World as Room).NextRoom(this);			
 			}
 		}
 		
