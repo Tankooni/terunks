@@ -161,7 +161,8 @@ namespace NHTI
 			RoomsAreLoading = true;
 			foreach(Entity d in Doors)
 			{
-				Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
+				if((d as Door).RoomLink != "")
+					Rooms.Add(d, BuildWorldAsArray("assets/Levels/" + (d as Door).RoomLink + ".oel"));
 			}
 			RoomsAreLoading = false;
 		}

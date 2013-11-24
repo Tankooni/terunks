@@ -21,7 +21,7 @@ namespace NHTI.GameObjects
 		
 		public Boss()
 		{
-			cloak = new Spritemap(Library.GetTexture("assets/ArmBoss.png"), 673, 349, onAnimationEnd);
+			cloak = new Spritemap(Library.GetTexture("assets/ArmsBoss.png"), 673, 349, onAnimationEnd);
 			cloak.Add("Reveal", FP.MakeFrames(0,11), 2, false);
 			
 			AddGraphic(cloak);
