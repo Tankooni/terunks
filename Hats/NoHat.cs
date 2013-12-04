@@ -53,8 +53,8 @@ namespace NHTI.Hats
 				float x = parent.World.MouseX - parent.X;
 				float y = parent.Y - parent.World.MouseY;
 				//add some variance
-				x *= .9f + FP.Rand(2000) / 10000f;
-				y *= .9f + FP.Rand(2000) / 10000f;
+				x *= .8f + FP.Rand(4000) / 10000f;
+				y *= .8f + FP.Rand(4000) / 10000f;
 				
 				//normalize them
 				float mag = (float)Math.Sqrt(x*x + y*y);
