@@ -67,7 +67,7 @@ namespace NHTI.Entities
 			{ "Stagger1", new AnimationData (8, FP.MakeFrames(50,54), false, null)},
 			{ "Stagger2", new AnimationData (8, FP.MakeFrames(55,59), false, null)},
 			{ "Death", new AnimationData (4, FP.MakeFrames(60,91), false, null)},
-			{ "Dance", new AnimationData (6, FP.MakeFrames(92, 106), false, null)}
+			{ "Dance", new AnimationData (6, FP.MakeFrames(92, 106), true, null)}
 		};
 		
 		public static Dictionary<string, AnimationData> FaceAnimDict = new Dictionary<string, AnimationData>()
@@ -252,8 +252,8 @@ namespace NHTI.Entities
 						//Run
 						else if(physics.velocity.X != 0)
 						{
-							bodySprites.Play("Run");
-							if(!isAttacking) faceSprites.Play("Run");
+							bodySprites.Play("Dance");
+							if(!isAttacking) faceSprites.Play("None");
 						}
 					}
 				}
@@ -313,7 +313,7 @@ namespace NHTI.Entities
 		}
 		public void OnAnimationEndFace()
 		{
-			if(faceSprites.CurrentAnim == "Run")
+			if(faceSprites.CurrentAnim == "None")
 				faceSprites.Play("Idle");
 			else if(faceSprites.CurrentAnim == "Jump")
 				faceSprites.Play("JumpIdle");
