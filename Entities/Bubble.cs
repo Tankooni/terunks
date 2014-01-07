@@ -31,7 +31,7 @@ namespace NHTI.Entities
 			AddGraphic(spritemap);
 			
 			spritemap.Play("Bubble");
-			
+			SetHitboxTo(spritemap);
 			_onCollide = onCollide;
 		}
 		
